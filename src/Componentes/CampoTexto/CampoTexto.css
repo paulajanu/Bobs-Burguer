@@ -1,0 +1,18 @@
+
+.campoTexto label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 28px;
+    color: #112953;
+    font-weight: bold;
+} 
+
+.campoTexto input {
+    background-color: #FFF;
+    width: 100%;
+    border: none;
+    font-size: 24px;
+    padding: 13px 36px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
