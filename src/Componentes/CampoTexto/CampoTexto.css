@@ -1,7 +1,7 @@
 
 .campoTexto label {
     display: block;
-    margin-bottom: 8px;
+    margin: 12px 0 8px 0;
     font-size: 28px;
     color: #112953;
     font-weight: bold;
@@ -15,4 +15,5 @@
     padding: 13px 36px;
     box-sizing: border-box;
     border-radius: 10px;
+    opacity: 55%;
 }
