@@ -1,4 +1,5 @@
 import CampoTexto from "../CampoTexto/CampoTexto"
+import Botao from "../Botao/Botao.js"
 import './Formulario.css'
 
 const Formulario = () => { 
@@ -7,6 +8,7 @@ const Formulario = () => {
             <form>
                 <CampoTexto label="E-mail:" type="email"/>
                 <CampoTexto label="Senha:" type="password"/>
+                <Botao texto="ENTRAR"/>
             </form>
 
         </section>
