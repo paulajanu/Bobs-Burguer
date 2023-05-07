@@ -12,3 +12,15 @@
     border-radius: 20px;
     padding: 36px 64px;
 }
+
+.mostrar-senha {
+    position: relative;
+    /* padding-right: 24px; espaço para o ícone */
+  }
+
+  .mostrar-senha > svg {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }

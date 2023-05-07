@@ -2,6 +2,8 @@ import CampoTexto from "../CampoTexto/CampoTexto";
 import Botao from "../Botao/Botao.js";
 import './Formulario.css';
 import { FaEnvelope, FaLock } from "react-icons/fa";
+//FaRegEye 
+//FaRegEyeSlash
 
 const Formulario = () => { 
     return (
