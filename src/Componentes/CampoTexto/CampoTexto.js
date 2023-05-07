@@ -1,11 +1,13 @@
 import './CampoTexto.css'
-// import { FaEnvelope } from "react-icons/fa";
 
 const CampoTexto = (props) => {
     return (
         <div className='campoTexto'>
-            <label>{props.label}</label>   
-            <input type={props.type}/>
+            <label>{props.label}</label> 
+            <div className="inputContainer">
+                {props.icon && <props.icon className="icon" />}
+                <input type={props.type}/>
+            </div>  
         </div>
     )
 }
