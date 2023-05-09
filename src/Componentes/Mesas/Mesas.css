@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+
+.mesas {
+    margin-left: 110px;
+}
+
+.mesas-instrucao {
+    display: inline-block;
+    margin-left: 130px;
+    margin-top: 30px;
+    background-color: #112953;
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.mesas-numero-img {
+    width: 220px;
+    cursor: pointer;
+}
