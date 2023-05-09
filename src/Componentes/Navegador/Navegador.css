@@ -1,0 +1,12 @@
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.icon-sair {
+    color: #112953;
+    font-size: 42px;
+    cursor: pointer;
+    margin: 5px 10px 5px 0;
+}

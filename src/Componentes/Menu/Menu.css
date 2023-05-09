@@ -1,0 +1,20 @@
+.menu {
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
+  
+.menu-coluna {
+    grid-column: 1; /* as imagens ocupam a primeira coluna (25%) */
+}
+  
+.menu-mesas {
+    grid-column: 2; /* as mesas ocupam a segunda coluna (75%) */
+} 
+
+.menu-coluna-img {
+    width: 245px;
+    margin-left: 20px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+

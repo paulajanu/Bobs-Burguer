@@ -1,13 +1,16 @@
-import Formulario from "./Componentes/Formulario/Formulario";
-import Logotipo from "./Componentes/Logotipo/Logotipo";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from './Paginas/Login/Login.js'
+import MenuGarcom from './Paginas/MenuGarcom/MenuGarcom.js';
 
-function App() {
+function Rotas() {
   return (
-    <div className="App">
-    <Logotipo/>
-    <Formulario/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login/>} />
+        <Route path="/MenuGarcom" element={<MenuGarcom/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
-export default App;
+export default Rotas;
