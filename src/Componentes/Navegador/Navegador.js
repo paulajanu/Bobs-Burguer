@@ -1,10 +1,13 @@
 import './Navegador.css';
+import { Link } from 'react-router-dom'
 import { FaSignOutAlt } from 'react-icons/fa';
 
 function Navegador () {
  return (
     <nav className='nav'>
-        <FaSignOutAlt className="icon-sair" />
+        <Link to="/">
+            <FaSignOutAlt className="icon-sair" /> 
+        </Link>
     </nav>
  )
 }
