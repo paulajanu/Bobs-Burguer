@@ -14,7 +14,7 @@ const CampoTexto = (props) => {
       <label>{props.label}</label> 
       <div className="inputContainer">
         {props.icon && <props.icon className="icon" />}
-        <input type={mostrarSenha ? 'text' : props.type} />
+        <input  onChange={props.onChange} type={mostrarSenha ? 'text' : props.type} />
         {props.type === 'password' && (
           <span className="iconeOlho" onClick={handleMostrarSenha}>
             {mostrarSenha ? < FaEye/> : <FaEyeSlash />}

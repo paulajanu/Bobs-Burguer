@@ -4,7 +4,7 @@ import Mesas from '../../Componentes/Mesas/Mesas.js';
 function Menu () {
  return (
     <aside className='menu'>
-        <div classname="menu-coluna">
+        <div className="menu-coluna">
             <img className="menu-coluna-img" src="/imagens/menu-em-preparo.png" alt="Menu - Pedidos em preparo"/>
             <img className="menu-coluna-img" src="/imagens/menu-prontos.png" alt="Menu - Pedidos prontos"/>
             <img className="menu-coluna-img" src="/imagens/menu-entregues.png" alt="Menu - Pedidos entregues"/>
