@@ -24,3 +24,9 @@
     top: 50%;
     transform: translateY(-50%);
   }
+
+  .mensagem-erro {
+    color: #B22A16;
+    font-size: 20px;
+    margin-bottom: 0px;
+  }
