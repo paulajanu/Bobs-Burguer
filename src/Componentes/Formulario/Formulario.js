@@ -12,30 +12,36 @@ const Formulario = () => {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [mensagemErro, setmensagemErro] = useState('');
-
+  
   const BtnEntrar = (event) => {
-    event.preventDefault(); 
+    event.preventDefault();
     login(email, senha)
       .then((response) => {
+        // A função 'then' é chamada quando a Promise retornada pela função 'login' é resolvida
         if (response.status === 200) {
+          // Verifica se o status da resposta é 200 (sucesso)
+          return response.json().then(() => {
+            // Chama a função 'json' da resposta para extrair os dados em formato JSON
+            // Em seguida, chama a função 'then' novamente para realizar ação desejada, no caso, a navegação para '/Menugarcom'
+            navigate('/Menugarcom');
+          });
+        } else if (response.status === 400) {
+          // Verifica se o status da resposta é 400 (erro de requisição inválida)
           return response.json()
-            .then(() => {
-              navigate('/Menugarcom');
-            });
-        } else if (response.status === 401) {
-          setmensagemErro(Erros(response));
-        } else if (response.status === 404) {
-          setmensagemErro(Erros(response));
-        } else {
-          setmensagemErro(Erros(response));
+          .then((mensagemErro) => {
+            // Chama a função 'json' da resposta para extrair a mensagem de erro em formato JSON
+            // Em seguida, chama a função 'then' para manipular a mensagem de erro e atualizar o estado 'mensagemErro'
+            const erro = Erros(mensagemErro);
+            setmensagemErro(erro);
+          });
         }
       })
       .catch((error) => {
-        setmensagemErro(Erros(error.response));
+        // O bloco 'catch' é chamado se ocorrer um erro durante o processamento da requisição ou da resposta
+        // Nesse caso, atualiza o estado 'mensagemErro' com uma mensagem de erro genérica
+        setmensagemErro(Erros(error));
       });
   };
-  
-  
 
   const aoDigitarEmail = (event) => {
     setEmail(event.target.value);
@@ -58,13 +64,3 @@ const Formulario = () => {
 };
 
 export default Formulario;
-
-// if (email === '' || senha === '') {
-//   setmensagemErro('Por favor, preencha todos os campos!')
-// } else {
-//   navigate('/Menugarcom');
-// }
-
-// // ... lógica de validação do formulário ...
-
-// // redirecionar o usuário para outra página após o envio do formulário
