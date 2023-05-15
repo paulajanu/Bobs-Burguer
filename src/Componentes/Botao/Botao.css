@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
 
 .botao {
-    background-color: #112359;
-    color: #fff;
     font-family: 'Quicksand', sans-serif;
     font-size: 30px;
     border: none;
@@ -11,3 +9,8 @@
     margin-top: 25px;
     cursor: pointer;
 }
+
+.azul {
+    background-color: #112359;
+    color: #fff;
+  }

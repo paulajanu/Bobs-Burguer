@@ -4,8 +4,8 @@ import Logotipo from '../../Componentes/Logotipo/Logotipo.js';
 function Login() {
   return (
     <div className="Login">
-    <Logotipo/>
-    <Formulario/>
+      <Logotipo/>
+      <Formulario/>
     </div>
   );
 }

@@ -1,22 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
 
-.mesas {
-    margin-left: 110px;
+.menu-garcom {
+    display: grid;
+    grid-template-columns: 25% 75%;
 }
+  
+.menu-garcom-coluna {
+    grid-column: 1; /* as imagens ocupam a primeira coluna (25%) */
+}
+  
+.menu-garcom-mesas {
+    grid-column: 2; /* as mesas ocupam a segunda coluna (75%) */
+    text-align: center;
+} 
 
 .mesas-instrucao {
     display: inline-block;
-    margin-left: 130px;
-    margin-top: 30px;
     background-color: #112953;
     color: #fff;
     font-family: 'Quicksand', sans-serif;
     padding: 20px;
     border-radius: 10px;
     font-size: 20px;
+    margin-bottom: 30px;
 }
 
-.mesas-numero-img {
-    width: 220px;
+.menu-coluna-img {
+    width: 245px;
+    margin-left: 20px;
+    margin-top: 15px;
     cursor: pointer;
+}
+
+.mesas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
 }
