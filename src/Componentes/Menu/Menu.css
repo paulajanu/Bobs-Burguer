@@ -1,20 +1,27 @@
-.menu {
-    display: grid;
-    grid-template-columns: 25% 75%;
-}
-  
-.menu-coluna {
-    grid-column: 1; /* as imagens ocupam a primeira coluna (25%) */
-}
-  
-.menu-mesas {
-    grid-column: 2; /* as mesas ocupam a segunda coluna (75%) */
-} 
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap');
 
-.menu-coluna-img {
-    width: 245px;
-    margin-left: 20px;
-    margin-top: 15px;
+.menu {
+    background: transparent;
+    border: none;
+    margin: 23px 0 0 50px;
     cursor: pointer;
 }
 
+.imagem-menu {
+    width: 200px;
+}
+
+hr {
+    border: none; /* Remove a borda padrão */
+    border-top: 4px solid #fbfc4e;; /* Define a nova borda com a largura desejada */
+    margin: 0;
+}
+
+.texto-menu {
+    color: #fbfc4e;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 30px;
+    margin: 0;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}

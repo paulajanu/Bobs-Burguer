@@ -57,7 +57,7 @@ const Formulario = () => {
         <CampoTexto icon={FaEnvelope} label="E-mail:" type="email" value={email} onChange={aoDigitarEmail} />
         <CampoTexto icon={FaLock} label="Senha:" type="password" value={senha} onChange={Senha} />
         {mensagemErro && (<p className="mensagem-erro">{mensagemErro}</p>)}
-        <Botao texto="ENTRAR" type="submit" />
+        <Botao type="submit" className="azul">ENTRAR</Botao>
       </form>
     </section>
   );
