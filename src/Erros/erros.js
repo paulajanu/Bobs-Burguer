@@ -1,13 +1,13 @@
-export function Erros (response) {
-    console.log('aaaaaaaaaaa', response);
-    switch (response.status) {
-        case 400:
-            return 'Ops, algum erro, tente novamente!';
-        // case 401:
-        //     return 'Usuário e/ou senha incorreto!';
-        // case 404:
-        //     return 'Usuário não encontrado!';
-        // default:
-        //     return 'Ops, ocorreu algum erro!';
+export function Erros (message) {
+    console.log('aaaaaaaaaaa', message);
+    switch (message) {
+        case 'Incorrect password':
+            return 'Senha incorreta!';
+        case 'Cannot find user':
+            return 'Usuário não encontrado!';
+        case 'Email and password are required': 
+            return 'Por favor, preencha todos os campos!'
+        default:
+            return 'Ops, ocorreu algum erro!';
     }
 }
