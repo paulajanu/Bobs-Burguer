@@ -3,8 +3,7 @@ import { render, screen } from '@testing-library/react';
 import Botao from '../Componentes/Botao/Botao';
 
 describe('Botao', () => {
-    test('renderiza corretamente', () => {
-      // Renderiza o componente Botao com o texto "Texto do Botão"
+    test('verifica se o botão renderiza corretamente', () => {
       render(<Botao>Texto do Botão</Botao>);
       const botaoElement = screen.getByRole('button');
   
@@ -12,8 +11,7 @@ describe('Botao', () => {
       expect(botaoElement).toBeInTheDocument();
     });
   
-    test('renderiza o texto fornecido', () => {
-      // Renderiza o componente Botao com o texto "Texto do Botão"
+    test('verifica se o texto fornecido renderiza corretamente', () => {
       render(<Botao>Texto do Botão</Botao>);
       const botaoElement = screen.getByRole('button');
   
@@ -21,8 +19,7 @@ describe('Botao', () => {
       expect(botaoElement).toHaveTextContent('Texto do Botão');
     });
   
-    test('aplica a classe CSS fornecida', () => {
-      // Renderiza o componente Botao com a classe CSS "botao-azul"
+    test('verifica se a classe "botao" e "botao-azul" são aplicadas corretamente', () => {
       render(<Botao className="botao-azul">Texto do Botão</Botao>);
       const botaoElement = screen.getByRole('button');
   
@@ -31,8 +28,7 @@ describe('Botao', () => {
       expect(botaoElement).toHaveClass('botao-azul');
     });
   
-    test('define o tipo de botão', () => {
-      // Renderiza o componente Botao com o tipo de botão "submit"
+    test('verifica o tipo de botão', () => {
       render(<Botao type="submit">Texto do Botão</Botao>);
       const botaoElement = screen.getByRole('button');
 
@@ -41,5 +37,3 @@ describe('Botao', () => {
     });
   });
   
-
- 

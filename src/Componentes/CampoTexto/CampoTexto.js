@@ -11,10 +11,10 @@ const CampoTexto = (props) => {
 
   return (
     <div className='campoTexto'>
-      <label>{props.label}</label> 
+      <label htmlFor={props.id}>{props.label}</label> 
       <div className="inputContainer">
         {props.icon && <props.icon className="icon" />}
-        <input  onChange={props.onChange} type={mostrarSenha ? 'text' : props.type} />
+        <input  onChange={props.onChange} type={mostrarSenha ? 'text' : props.type} id={props.id}/>
         {props.type === 'password' && (
           <span className="iconeOlho" onClick={handleMostrarSenha}>
             {mostrarSenha ? < FaEye/> : <FaEyeSlash />}

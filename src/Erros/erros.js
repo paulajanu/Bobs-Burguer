@@ -1,5 +1,4 @@
 export function Erros (message) {
-    console.log('aaaaaaaaaaa', message);
     switch (message) {
         case 'Incorrect password':
             return 'Senha incorreta!';

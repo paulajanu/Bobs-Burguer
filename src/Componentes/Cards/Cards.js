@@ -7,7 +7,7 @@ const Cards = (props) => {
     const textoClassName = `texto-card ${props.textoClassName}`;
 
     return (
-        <div className={cardsClassName}>
+        <div className={cardsClassName} data-testid="div-cards">
             <img src={props.imagem} alt="Imagem do card" className={imagemClassName}/>
             <p className={textoClassName}>{props.texto}</p>
         </div>
