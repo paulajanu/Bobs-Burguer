@@ -16,7 +16,7 @@ const CampoTexto = (props) => {
         {props.icon && <props.icon className="icon" />}
         <input  onChange={props.onChange} type={mostrarSenha ? 'text' : props.type} id={props.id}/>
         {props.type === 'password' && (
-          <span className="iconeOlho" onClick={handleMostrarSenha}>
+          <span className="iconeOlho" onClick={handleMostrarSenha} data-testid="icone-olho">
             {mostrarSenha ? < FaEye/> : <FaEyeSlash />}
           </span>
         )}

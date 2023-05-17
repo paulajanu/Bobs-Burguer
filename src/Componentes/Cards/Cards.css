@@ -26,3 +26,7 @@
     font-size: 27px;
     margin: 0 0 7px 0;
 }
+
+.link {
+    text-decoration: none;
+}
