@@ -58,6 +58,7 @@ function Mesas () {
                     key={index}
                     imagem={cardsMesas.imagem}
                     texto={cardsMesas.texto}
+                    paginaDestino="/Pedidos"
                     cardsClassName="cards-mesa" 
                     imagemClassname="imagem-card" 
                     textoClassName="texto-card"

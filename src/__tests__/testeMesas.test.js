@@ -1,0 +1,16 @@
+import { render } from '@testing-library/react';
+import Mesas from '../Componentes/Mesas/Mesas';
+import Cards from '../Componentes/Cards/Cards';
+import Menu from '../Componentes/Menu/Menu';
+
+jest.mock('../Componentes/Cards/Cards');
+jest.mock('../Componentes/Menu/Menu');
+
+describe('Mesas', () => {
+  it('deve renderizar os componentes Cards e Menu corretamente', () => {
+    render(<Mesas />);
+    
+    expect(Cards).toHaveBeenCalledTimes(9); // Verifica se o componente Cards foi chamado 9 vezes
+    expect(Menu).toHaveBeenCalledTimes(3); // Verifica se o componente Menu foi chamado 3 vezes
+  });
+});
