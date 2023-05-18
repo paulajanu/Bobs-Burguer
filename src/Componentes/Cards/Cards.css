@@ -16,6 +16,13 @@
     margin-left: 77px;
 }
 
+.cards-produto {
+    background-color: rgba(17, 35, 89, 0.4);
+    height: 229px;
+    width: 190px;
+    margin: 5px;
+}
+
 .imagem-card {
     width: 160px;
 }
@@ -25,6 +32,11 @@
     font-family: 'Quicksand', sans-serif;
     font-size: 27px;
     margin: 0 0 7px 0;
+}
+
+.texto-card-produtos {
+    font-size: 23px;
+    margin: 0 0 0 0;
 }
 
 .link {

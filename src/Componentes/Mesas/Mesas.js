@@ -1,5 +1,5 @@
-import Cards from '../Cards/Cards';
-import Menu from '../Menu/Menu';
+import Cards from '../Cards/Cards.js';
+import Menu from '../Menu/Menu.js';
 import './Mesas.css';
 
 function Mesas () {
@@ -7,39 +7,39 @@ function Mesas () {
     const cardsMesas = [
         {
             imagem: '/imagens/mesa-1.png',
-            texto: 'MESA 1',
+            texto2: 'MESA 1',
         },
         {
             imagem: '/imagens/mesa-2.png',
-            texto: 'MESA 2',
+            texto2: 'MESA 2',
         },
         {
             imagem: '/imagens/mesa-3.png',
-            texto: 'MESA 3',
+            texto2: 'MESA 3',
         },
         {
             imagem: '/imagens/mesa-4.png',
-            texto: 'MESA 4',
+            texto2: 'MESA 4',
         },
         {
             imagem: '/imagens/mesa-5.png',
-            texto: 'MESA 5',
+            texto2: 'MESA 5',
         },
         {
             imagem: '/imagens/mesa-6.png',
-            texto: 'MESA 6',
+            texto2: 'MESA 6',
         },
         {
             imagem: '/imagens/mesa-7.png',
-            texto: 'MESA 7',
+            texto2: 'MESA 7',
         },
         {
             imagem: '/imagens/mesa-8.png',
-            texto: 'MESA 8',
+            texto2: 'MESA 8',
         },
         {
             imagem: '/imagens/mesa-9.png',
-            texto: 'MESA 9',
+            texto2: 'MESA 9',
         },
       ];
 
@@ -57,10 +57,10 @@ function Mesas () {
                 <Cards
                     key={index}
                     imagem={cardsMesas.imagem}
-                    texto={cardsMesas.texto}
+                    texto2={cardsMesas.texto2}
                     paginaDestino="/Pedidos"
                     cardsClassName="cards-mesa" 
-                    imagemClassname="imagem-card" 
+                    imagemClassName="imagem-card" 
                     textoClassName="texto-card"
                 />
                 ))}

@@ -1,0 +1,69 @@
+.card-pedido {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.40);
+    width: 451px;
+    height: 567px;
+    margin-top: 35px;
+}
+
+.icone-carrinho {
+    color: #112953;
+    margin-left: 5px;
+    font-size: 34px;
+}
+
+.span-carrinho {
+    margin-right: 10px;
+}
+
+.resumo-compra {
+    color: #112953;
+    font-size: 21px;
+}
+
+.item {
+    margin-right: 200px;
+    margin-left: 10px;
+    font-size: 20px;
+    color: #112953;
+}
+
+.quantidade {
+    margin-right: 55px;
+    font-size: 20px;
+    color: #112953;
+}
+
+.preco {
+    font-size: 20px;
+    color: #112953;
+}
+
+.itens-qtd-preco {
+    margin-top: 2px;
+}
+
+.listra-carrinho {
+    border: none; /* Remove a borda padrão */
+    border-top: 2px solid  #112953; /* Define a nova borda com a largura desejada */
+    margin: 0;
+}
+
+.total {
+    margin-left: 10px;
+    font-size: 20px;
+    color: #112953;
+}
+
+.inicio-carrinho {
+    height: 450px;
+}
+
+.listra-total {
+    border: none; /* Remove a borda padrão */
+    border-top: 2px solid  #112953; /* Define a nova borda com a largura desejada */
+    margin: 0;
+}
