@@ -20,11 +20,9 @@ const Formulario = () => {
         // A função 'then' é chamada quando a Promise retornada pela função 'login' é resolvida
         if (response.status === 200) {
           // Verifica se o status da resposta é 200 (sucesso)
-          return response.json().then(() => {
             // Chama a função 'json' da resposta para extrair os dados em formato JSON
             // Em seguida, chama a função 'then' novamente para realizar ação desejada, no caso, a navegação para '/Menugarcom'
             navigate('/Menugarcom');
-          });
         } else if (response.status === 400) {
           // Verifica se o status da resposta é 400 (erro de requisição inválida)
           return response.json()
@@ -57,7 +55,7 @@ const Formulario = () => {
         <CampoTexto icon={FaEnvelope} label="E-mail:" type="email" id="email" value={email} onChange={aoDigitarEmail} />
         <CampoTexto icon={FaLock} label="Senha:" type="password" id="senha" value={senha} onChange={Senha} />
         {mensagemErro && (<p className="mensagem-erro">{mensagemErro}</p>)}
-        <Botao type="submit" className="azul">ENTRAR</Botao>
+        <Botao type="submit" className="azul entrar">ENTRAR</Botao>
       </form>
     </section>
   );

@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+
+.mesa-cliente {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.40);
+    width: 449px;
+    height: 57px;
+    font-size: 20px;
+    color: #112953;
+    margin-top: 111px;
+}
+
+.mesa {
+    margin-left: 20px;
+    font-size: 20px;
+    color: #112953;
+}
+
+.input-transparente {
+    width: 170px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    background: transparent;
+    border: none; 
+    outline: none; 
+    border-bottom: 1px solid #112953;
+    color: #112953;
+    margin-right: 20px;
+}

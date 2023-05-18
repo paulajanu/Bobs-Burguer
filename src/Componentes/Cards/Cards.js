@@ -10,8 +10,10 @@ const Cards = (props) => {
     return (
         <Link to={props.paginaDestino} className='link'>
         <div className={cardsClassName} data-testid="div-cards">
+            {props.texto1 && <p className={textoClassName}>{props.texto1}</p>}
             <img src={props.imagem} alt="Imagem do card" className={imagemClassName}/>
-            <p className={textoClassName}>{props.texto}</p>
+            {/* <p className={textoClassName}>{props.texto}</p> */}
+            {props.texto2 && <p className={textoClassName}>{props.texto2}</p>}
         </div>
         </Link>
     )
