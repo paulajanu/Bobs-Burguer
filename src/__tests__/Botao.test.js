@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import Botao from '../Componentes/Botao/Botao';
 
 describe('Botao', () => {
-    test('verifica se o botão renderiza corretamente', () => {
+    test('renderiza um botão corretamente', () => {
       render(<Botao>Texto do Botão</Botao>);
       const botaoElement = screen.getByRole('button');
   
@@ -11,7 +11,7 @@ describe('Botao', () => {
       expect(botaoElement).toBeInTheDocument();
     });
   
-    test('verifica se o texto fornecido renderiza corretamente', () => {
+    test('renderiza o texto do botão corretamente', () => {
       render(<Botao>Texto do Botão</Botao>);
       const botaoElement = screen.getByRole('button');
   
@@ -19,7 +19,7 @@ describe('Botao', () => {
       expect(botaoElement).toHaveTextContent('Texto do Botão');
     });
   
-    test('verifica se a classe "botao" e "botao-azul" são aplicadas corretamente', () => {
+    test('verifica se as classes "botao" e "botao-azul" são aplicadas corretamente', () => {
       render(<Botao className="botao-azul">Texto do Botão</Botao>);
       const botaoElement = screen.getByRole('button');
   
@@ -35,5 +35,5 @@ describe('Botao', () => {
       // Verifica se o elemento do botão possui o atributo "type" com o valor "submit"
       expect(botaoElement).toHaveAttribute('type', 'submit');
     });
-  });
+});
   

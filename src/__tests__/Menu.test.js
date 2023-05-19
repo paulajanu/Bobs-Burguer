@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import Menu from '../Componentes/Menu/Menu.js';
 
 describe('Menu', () => {
-    test('verifica se o botão renderiza corretamente', () => {
+    test('renderiza o botão corretamente', () => {
       render(<Menu/>);
       const botaoMenuElement = screen.getByRole('button');
   
@@ -17,7 +17,7 @@ describe('Menu', () => {
       expect(botaoMenuElement).toHaveClass('menu');
     });
 
-    test('verifica se a imagem renderiza corretamente', () => {
+    test('renderiza a imagem corretamente', () => {
         render(<Menu/>);
         const imagemMenuElement = screen.getByRole('img');
     
@@ -40,7 +40,7 @@ describe('Menu', () => {
         expect(altMenuElement).toHaveAttribute('alt', 'Imagem do menu')
     });
 
-    test('verifica se a linha separadora é renderizada corretamente', () => {
+    test('renderiza a linha separadora corretamente', () => {
         render(<Menu/>);
         const linhaSeparadoraElement = screen.getByRole('separator');
         
@@ -48,7 +48,7 @@ describe('Menu', () => {
         expect(linhaSeparadoraElement.tagName).toBe('HR');
     });
 
-    test('verifica se o texto do elemento "p" é renderizado corretamente', () => {
+    test('renderiza o texto do elemento "p" corretamente', () => {
         const texto = 'MESA 1';
 
         render(<Menu texto={texto}/>);

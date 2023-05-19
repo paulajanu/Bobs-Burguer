@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import Navegador from '../Componentes/Navegador/Navegador'; 
 
 describe('Navegador', () => {
-    test('renderiza corretamente', () => {
+    test('renderiza o elemento "nav" corretamente', () => {
       render(
         <Router>
           <Navegador />
@@ -24,4 +24,4 @@ describe('Navegador', () => {
       const iconElement = screen.getByRole('link');
       expect(iconElement).toBeInTheDocument();
     });
-  });
+});
