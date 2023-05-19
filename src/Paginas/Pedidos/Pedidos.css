@@ -3,8 +3,8 @@
     grid-template-rows: auto 1fr;
 }
   
-  .pedidos-content {
-    display: grid;
-    grid-template-columns: 60% 40%;
+.pedidos-content {
+  display: grid;
+  grid-template-columns: 60% 40%;
 }
   

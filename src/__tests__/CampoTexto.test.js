@@ -27,4 +27,4 @@ describe('CampoTexto', () => {
       // Verifica se o campo de senha é do tipo "text" após o clique no ícone de olho
       expect(inputSenha.type).toBe('text');
     });
-  });
+});

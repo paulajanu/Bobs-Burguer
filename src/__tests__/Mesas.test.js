@@ -7,7 +7,7 @@ jest.mock('../Componentes/Cards/Cards');
 jest.mock('../Componentes/Menu/Menu');
 
 describe('Mesas', () => {
-  it('deve renderizar os componentes Cards e Menu corretamente', () => {
+  it('renderiza os componentes Cards e Menu corretamente', () => {
     render(<Mesas />);
     
     expect(Cards).toHaveBeenCalledTimes(9); // Verifica se o componente Cards foi chamado 9 vezes

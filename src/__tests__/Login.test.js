@@ -4,7 +4,7 @@ import Login from '../Paginas/Login/Login.js';
 import { MemoryRouter } from 'react-router-dom';
 
 describe('Login', () => {
-  test('renderiza o Logotipo', () => {
+  test('renderiza o componente logotipo corretamente', () => {
     render(    
         <MemoryRouter>
             <Login />
@@ -13,7 +13,7 @@ describe('Login', () => {
     expect(logotipoElement).toBeInTheDocument();
   });
 
-  test('renderiza o Formulário', () => {
+  test('renderiza o componente formulário corretamente', () => {
     render(    
         <MemoryRouter>
             <Login />

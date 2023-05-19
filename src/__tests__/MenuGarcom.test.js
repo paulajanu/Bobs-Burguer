@@ -7,7 +7,7 @@ jest.mock('../Componentes/Mesas/Mesas');
 jest.mock('../Componentes/Navegador/Navegador');
 
 describe('MenuGarcom', () => {
-  it('deve renderizar o componente Navegador e o componente Mesas', () => {
+  it('renderiza o componente Navegador e o componente Mesas corretamente', () => {
     render(<MenuGarcom />);
     
     expect(Navegador).toHaveBeenCalled();

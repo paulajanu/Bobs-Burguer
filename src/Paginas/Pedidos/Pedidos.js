@@ -1,36 +1,10 @@
-// import CardPedido from '../../Componentes/CardPedido/CardPedido.js';
-// import CardapioProdutos from '../../Componentes/CardapioProdutos/CardapioProdutos.js';
-// import FiltroCardapio from '../../Componentes/FiltroCardapio/FiltroCardapio.js';
-// import MesaCliente from '../../Componentes/MesaCliente/MesaCliente.js';
-// import Navegador from "../../Componentes/Navegador/Navegador.js";
-// import Voltar from '../../Componentes/Voltar/Voltar.js';
-
-// function Pedidos() {
-//     return (
-//         <div>
-//             <Navegador/>
-//             <div>
-//                 <Voltar/>
-//                 <FiltroCardapio/>
-//                 <CardapioProdutos/>
-//             </div>
-//             <div>
-//                 <MesaCliente/>
-//                 <CardPedido/>
-//             </div>
-//         </div>
-//     );
-// }
-  
-// export default Pedidos;
-
 import CardPedido from '../../Componentes/CardPedido/CardPedido.js';
 import CardapioProdutos from '../../Componentes/CardapioProdutos/CardapioProdutos.js';
 import FiltroCardapio from '../../Componentes/FiltroCardapio/FiltroCardapio.js';
 import MesaCliente from '../../Componentes/MesaCliente/MesaCliente.js';
 import Navegador from "../../Componentes/Navegador/Navegador.js";
 import Voltar from '../../Componentes/Voltar/Voltar.js';
-import './Pedidos.css'; // Importando o arquivo CSS externo
+import './Pedidos.css';
 
 function Pedidos() {
   return (
