@@ -54,7 +54,7 @@ const Formulario = () => {
       <form onSubmit={BtnEntrar}>
         <CampoTexto icon={FaEnvelope} label="E-mail:" type="email" id="email" value={email} onChange={aoDigitarEmail} />
         <CampoTexto icon={FaLock} label="Senha:" type="password" id="senha" value={senha} onChange={Senha} />
-        {mensagemErro && (<p className="mensagem-erro">{mensagemErro}</p>)}
+        {mensagemErro && (<p className="mensagem-erro" data-testid="mensagem-erro">{mensagemErro}</p>)}
         <Botao type="submit" className="azul entrar">ENTRAR</Botao>
       </form>
     </section>
