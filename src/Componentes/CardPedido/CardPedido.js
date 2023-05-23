@@ -16,8 +16,8 @@ const CardPedido = () => {
                     <span className='item'>Item</span>
                     <span className='quantidade'>Qtd</span>
                     <span className='preco'>Preço</span>
-                    <hr className='listra-carrinho'/>
                 </p>
+                <hr className='listra-carrinho'/>
                 </div>
                 <div className='container-total'> 
                     <hr className='listra-total'/>
