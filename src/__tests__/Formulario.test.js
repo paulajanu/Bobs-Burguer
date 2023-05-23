@@ -41,27 +41,6 @@ test('Realiza o login e navega para a página de destino', async () => {
       });
   });
 });
-
-// it('deve exibir uma mensagem de erro ao ocorrer uma falha no login', async () => {
-//     Erros.mockReturnValueOnce('Credenciais inválidas');
-//     login.mockRejectedValueOnce({ status: 400 });
-
-//     const { getByLabelText, getByText, getByTestId } = render(<Formulario />);
-
-//     const emailInput = getByLabelText('E-mail:');
-//     const senhaInput = getByLabelText('Senha:');
-//     const entrarButton = getByText('ENTRAR');
-
-//     fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
-//     fireEvent.change(senhaInput, { target: { value: 'invalidpassword' } });
-//     fireEvent.click(entrarButton);
-
-//     await waitFor(() => {
-//       expect(Erros).toHaveBeenCalledTimes(1);
-//       expect(Erros).toHaveBeenCalledWith({ status: 400 });
-//       expect(getByTestId('mensagem-erro')).toHaveTextContent('Credenciais inválidas');
-//     });
-//   });
   
   it('deve exibir uma mensagem de erro ao ocorrer uma falha no login', async () => {
     Erros.mockReturnValueOnce('Credenciais inválidas');

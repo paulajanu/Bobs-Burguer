@@ -1,3 +1,6 @@
+import React from 'react';
+import queryString from 'query-string';
+import { useLocation } from 'react-router-dom';
 import CardPedido from '../../Componentes/CardPedido/CardPedido.js';
 import CardapioProdutos from '../../Componentes/CardapioProdutos/CardapioProdutos.js';
 import FiltroCardapio from '../../Componentes/FiltroCardapio/FiltroCardapio.js';
@@ -7,6 +10,10 @@ import Voltar from '../../Componentes/Voltar/Voltar.js';
 import './Pedidos.css';
 
 function Pedidos() {
+  const location = useLocation();
+  const mesaParams = queryString.parse(location.search);
+  const mesaSelecionada = mesaParams.mesa || '';
+
   return (
     <div className="pedidos-container">
       <Navegador />
@@ -18,7 +25,7 @@ function Pedidos() {
           <CardapioProdutos />
         </div>
         <div>
-          <MesaCliente />
+          <MesaCliente mesa={mesaSelecionada} />
           <CardPedido />
         </div>
       </div>
@@ -27,4 +34,3 @@ function Pedidos() {
 }
 
 export default Pedidos;
-

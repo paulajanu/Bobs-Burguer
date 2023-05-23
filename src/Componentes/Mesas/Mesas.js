@@ -58,10 +58,10 @@ function Mesas () {
                     key={index}
                     imagem={cardsMesas.imagem}
                     texto2={cardsMesas.texto2}
-                    paginaDestino="/Pedidos"
                     cardsClassName="cards-mesa" 
                     imagemClassName="imagem-card" 
                     textoClassName="texto-card"
+                    numeroMesa={index + 1}
                 />
                 ))}
             </div>

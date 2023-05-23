@@ -1,10 +1,11 @@
+import React from 'react';
 import './MesaCliente.css';
 
-const MesaCliente = () => {
+const MesaCliente = ({ mesa }) => {
     return (
         <div className='mesa-cliente'>
             <div className='mesa'>
-                <p className='label'>Mesa:</p>
+                <p className='label'>Mesa: {mesa}</p>
             </div>
             <div>
                 <label className='label' htmlFor='cliente'>Cliente:</label>
@@ -14,4 +15,4 @@ const MesaCliente = () => {
     )
 }
 
-export default MesaCliente
+export default MesaCliente;
