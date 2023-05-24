@@ -25,7 +25,7 @@
     padding: 11px 15px;
 }
 
-  .transparente {
+.transparente {
     color: #112359;
     background-color:transparent;   
     border: 2px solid #112359;
@@ -34,16 +34,4 @@
 .azul {
     background-color: #112359;
     color: #fff;
-}
-
-.filtro-cardapio {
-    background-color: rgba(255, 255, 255, 0.6);
-    color: #112359;
-    font-size: 22px;
-    padding: 10px 7px;
-    margin: 0 1px;
-}
-
-.filtro-cardapio:focus {
-    background-color: rgba(17, 35, 89, 0.4); 
 }
