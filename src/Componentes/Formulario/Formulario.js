@@ -7,6 +7,8 @@ import React, { useState } from 'react';
 import login from '../../API/api';
 import { Erros } from '../../Erros/erros';
 
+export let token;
+
 const Formulario = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
@@ -16,19 +18,14 @@ const Formulario = () => {
   const BtnEntrar = (event) => {
     event.preventDefault();
     login(email, senha)
-      .then((response) => {
-        // A função 'then' é chamada quando a Promise retornada pela função 'login' é resolvida
+      .then(async(response) => {
         if (response.status === 200) {
-          // Verifica se o status da resposta é 200 (sucesso)
-            // Chama a função 'json' da resposta para extrair os dados em formato JSON
-            // Em seguida, chama a função 'then' novamente para realizar ação desejada, no caso, a navegação para '/Menugarcom'
-            navigate('/Menugarcom');
+          navigate('/Menugarcom');
+          const resp = await response.json()
+          token = resp.accessToken;
         } else if (response.status === 400) {
-          // Verifica se o status da resposta é 400 (erro de requisição inválida)
           return response.json()
           .then((mensagemErro) => {
-            // Chama a função 'json' da resposta para extrair a mensagem de erro em formato JSON
-            // Em seguida, chama a função 'then' para manipular a mensagem de erro e atualizar o estado 'mensagemErro'
             const erro = Erros(mensagemErro);
             setmensagemErro(erro);
           });
