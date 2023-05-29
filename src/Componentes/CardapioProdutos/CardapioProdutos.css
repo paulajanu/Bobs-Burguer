@@ -8,7 +8,7 @@
     height: 567px;
     width: 660px;
     border-radius: 20px;
-    margin: 35px 0 0 48px;
+    margin-top: 20px;
 }
 
 .cardapio-filtro {
@@ -18,7 +18,7 @@
     background-color: rgba(255, 255, 255, 0.40);;
     height: 57px;
     width: 660px;
-    margin: 20px 0 0 48px;
+    margin-top: 20px;
     border-radius: 20px;
 }
 
@@ -37,3 +37,21 @@
 .filtro-cardapio:focus {
     background-color: rgba(17, 35, 89, 0.4); 
 }
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  
+  .content-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .content-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
