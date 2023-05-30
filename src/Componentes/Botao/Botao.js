@@ -6,7 +6,7 @@ const Botao = (props) => {
 
   return (
      // Renderiza um elemento <button> com a classe buttonClassName e o tipo de botão definido através da propriedade type
-    <button className={classeBotao} type={props.type}> 
+    <button className={classeBotao} type={props.type} onClick={props.onClick}> 
       {props.children}
     </button>
   );
