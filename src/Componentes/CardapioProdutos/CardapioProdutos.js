@@ -20,6 +20,8 @@ const CardapioProdutos = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [selecionarHamburguer, setSelecionarHamburguer] = useState('');
   const [selecionarOpcional, setSelecionarOpcional] = useState('');
+  const [tipoHamburguer, setTipoHamburguer] = useState('');
+  const [adicional, setAdicional] = useState('')
 
   const btnHamburguer = (event) => {
     setSelecionarHamburguer(event.target.value);
@@ -67,17 +69,20 @@ const CardapioProdutos = () => {
     : produtos;
 
     const adicionarProduto = (produto) => {
-      console.log('Produto adicionado:', produto);
+      console.log('Produto adicionado:', produto); // Imprime no console o produto que está sendo adicionado
       const produtoExistente = produtosSelecionados.find((p) => p.id === produto.id);
+      // Verifica se o produto já existe na lista de produtos selecionados com base no seu ID
       if (!produtoExistente) {
+        // Se o produto não existe na lista
         if (!modalIsOpen && produto.id === 5) {
-          setIsOpen(true); // Open the modal
+          setIsOpen(true); // Abre o modal, se o produto é do tipo hambúrguer simples (id === 5) e o modal não estiver aberto
         } else {
           setProdutosSelecionados([...produtosSelecionados, produto]);
+          // Adiciona o produto à lista de produtos selecionados, espalhando os produtos existentes e adicionando o novo produto
         }
       }
     };
-
+    
     const removerProduto = (produto) => {
       const novosProdutosSelecionados = produtosSelecionados.filter((p) => p.id !== produto.id);
       setProdutosSelecionados(novosProdutosSelecionados);
@@ -98,20 +103,25 @@ const CardapioProdutos = () => {
           produtosFiltrados.map((produto) => (
             <Cards
               key={produto.id}
-              produto={produto} // Adicione a prop "produto" e passe o objeto "produto" como valor
+              produto={produto} 
               imagem={produto.image}
               cardsClassName="cards-produto"
               texto1={produto.name}
               texto2={`R$ ${produto.price.toFixed(2)}`}
               textoClassName="texto-card-produtos"
-              adicionarProduto={adicionarProduto} // Remova a função de dentro do arrow function
+              adicionarProduto={adicionarProduto} 
             />
           ))}
         </div>
         </div>
         <div className="content-right">
           <MesaCliente mesa={mesaSelecionada} />
-          <CardPedido produtosSelecionados={produtosSelecionados} removerProduto={removerProduto}  />
+          <CardPedido
+            produtosSelecionados={produtosSelecionados}
+            removerProduto={removerProduto}
+            tipoHamburguer={tipoHamburguer}
+            adicional={adicional}
+          />
           <Modal
             className="modal"
             isOpen={modalIsOpen}
@@ -123,7 +133,6 @@ const CardapioProdutos = () => {
                 alignItems: "center"
               },
             }}
-            onRequestClose={() => setIsOpen(false)}
           >
           <div className='selecao-opcoes'>
             <p className='instrucao-selecao'>Selecione o hambúrguer</p>
@@ -131,29 +140,29 @@ const CardapioProdutos = () => {
               <div className="grupo-radio">
                 <input
                   type="radio"
-                  id="bovino"
-                  value="bovino"
-                  checked={selecionarHamburguer === 'bovino'}
+                  id="Bovino"
+                  value="Bovino"
+                  checked={selecionarHamburguer === 'Bovino'}
                   onChange={btnHamburguer}
                 />
                 <label htmlFor="bovino">Bovino</label>
               </div>
               <div className="grupo-radio espacamento-extra">
-                <input
-                  type="radio"
-                  id="frango"
-                  value="frango"
-                  checked={selecionarHamburguer === 'frango'}
-                  onChange={btnHamburguer}
-                />
+              <input
+                type="radio"
+                id="Frango"
+                value="Frango"
+                checked={selecionarHamburguer === 'Frango'} // Verifica se o valor selecionado é 'Frango'
+                onChange={btnHamburguer} // Chama a função btnHamburguer quando o valor do input é alterado
+              />
                 <label htmlFor="frango">Frango</label>
               </div>
               <div className="grupo-radio">
                 <input
                   type="radio"
-                  id="vegetariano"
-                  value="vegetariano"
-                  checked={selecionarHamburguer === 'vegetariano'}
+                  id="Vegetariano"
+                  value="Vegetariano"
+                  checked={selecionarHamburguer === 'Vegetariano'}
                   onChange={btnHamburguer}
                 />
                 <label htmlFor="vegetariano">Vegetariano</label>
@@ -171,9 +180,9 @@ const CardapioProdutos = () => {
               <div className="grupo-radio">
                 <input
                   type="radio"
-                  id="queijo"
-                  value="queijo"
-                  checked={selecionarOpcional === 'queijo'}
+                  id="Queijo"
+                  value="Queijo"
+                  checked={selecionarOpcional === 'Queijo'}
                   onChange={btnOpcional}
                   />
                 <label htmlFor="queijo">Queijo</label>
@@ -181,9 +190,9 @@ const CardapioProdutos = () => {
               <div className="grupo-radio">
                 <input
                   type="radio"
-                  id="ovo"
-                  value="ovo"
-                  checked={selecionarOpcional === 'ovo'}
+                  id="Ovo"
+                  value="Ovo"
+                  checked={selecionarOpcional === 'Ovo'}
                   onChange={btnOpcional}
                   />
                 <label htmlFor="ovo">Ovo</label>
@@ -191,9 +200,9 @@ const CardapioProdutos = () => {
               <div className="grupo-radio">
               <input
                 type="radio"
-                id="nenhum"
-                value="nenhum"
-                checked={selecionarOpcional === 'nenhum'}
+                id="Nenhum"
+                value="Nenhum"
+                checked={selecionarOpcional === 'Nenhum'}
                 onChange={btnOpcional}
                 />
               <label htmlFor="nenhum">Nenhum</label>
@@ -207,7 +216,28 @@ const CardapioProdutos = () => {
             </div>
             <div className='botoes-modal'>
               <Botao className="transparente confirmar-cancelar" onClick={() => setIsOpen(false)}>CANCELAR</Botao>
-              <Botao className="azul confirmar-cancelar">CONFIRMAR</Botao>
+              <Botao
+                className="azul confirmar-cancelar"
+                onClick={() => {
+                  setIsOpen(false); // Fechar o modal
+                  const produtoHamburguerSimples = produtos.find((produto) => produto.id === 5);
+                  // Encontrar o produto do tipo hambúrguer simples na lista de produtos
+                  const produtoSelecionado = {
+                    ...produtoHamburguerSimples,
+                    tipoHamburguer: selecionarHamburguer,
+                    adicional: selecionarOpcional,
+                  };
+                  // Criar um objeto com os dados do produto selecionado, incluindo o tipo de hambúrguer e o adicional selecionados
+                  adicionarProduto(produtoSelecionado);
+                  // Chamar a função adicionarProduto passando o produto selecionado como parâmetro para adicioná-lo à lista de produtos selecionados
+                  setTipoHamburguer(selecionarHamburguer);
+                  // Atualizar o estado do tipo de hambúrguer com o valor selecionado
+                  setAdicional(selecionarOpcional);
+                  // Atualizar o estado do adicional com o valor selecionado
+                }}
+              >
+                CONFIRMAR
+              </Botao>
             </div>
           </Modal>
         </div>

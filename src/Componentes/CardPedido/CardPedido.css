@@ -114,3 +114,16 @@
     display: flex;
     justify-content: space-between;
 }
+
+.produto-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .tipo-hamburguer-adicional {
+    margin-top: 4px;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+  
+  
