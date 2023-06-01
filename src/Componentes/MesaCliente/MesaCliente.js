@@ -12,7 +12,7 @@ const MesaCliente = ({ mesa }) => {
                 <input type='text' id='cliente' className='input-transparente'></input>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default MesaCliente;

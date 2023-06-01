@@ -16,15 +16,15 @@ const Cards = (props) => {
             </div>
         </Link>
     );
-}
+    };
 
-return (
-    <div className={cardsClassName} data-testid="div-cards" onClick={() => props.adicionarProduto(props.produto)}>
-        {props.texto1 && <p className={textoClassName} >{props.texto1}</p>}
-        <img src={props.imagem} alt="Imagem do card" className={imagemClassName}/>
-        {props.texto2 && <p className={textoClassName}>{props.texto2}</p>}
-    </div>
-);
-}
+    return (
+        <div className={cardsClassName} data-testid="div-cards" onClick={() => props.adicionarProduto(props.produto)}>
+            {props.texto1 && <p className={textoClassName} >{props.texto1}</p>}
+            <img src={props.imagem} alt="Imagem do card" className={imagemClassName}/>
+            {props.texto2 && <p className={textoClassName}>{props.texto2}</p>}
+        </div>
+    );
+};
 
 export default Cards;

@@ -8,6 +8,6 @@ function Login() {
       <Formulario/>
     </div>
   );
-}
+};
 
 export default Login;

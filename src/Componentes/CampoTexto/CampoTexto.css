@@ -1,56 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
 
 .campoTexto label {
-    display: block;
-    margin: 12px 0 8px 0;
-    font-size: 28px;
-    color: #112953;
-    font-weight: bold;
+  display: block;
+  margin: 12px 0 8px 0;
+  font-size: 28px;
+  color: #112953;
+  font-weight: bold;
 } 
 
 .campoTexto input {
-    background-color: rgba(255, 255, 255, 0.55);
-    font-family: 'Quicksand', sans-serif;
-    color: #112953;
-    width: 100%;
-    border: none;
-    font-size: 24px;
-    padding: 13px 46px;
-    box-sizing: border-box;
-    border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.55);
+  font-family: 'Quicksand', sans-serif;
+  color: #112953;
+  width: 100%;
+  border: none;
+  font-size: 24px;
+  padding: 13px 46px;
+  box-sizing: border-box;
+  border-radius: 10px;
 }
 
 .inputContainer {
-    position: relative;
+  position: relative;
 }
   
 .icon {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    color: #112953;
-    font-size: 25px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #112953;
+  font-size: 25px;
 }
 
 .campoTexto {
-    position: relative;
-  }
+  position: relative;
+}
   
-  .inputContainer {
-    position: relative;
-  }
+.inputContainer {
+  position: relative;
+}
   
-  .inputContainer input[type="password"] {
-    padding-right: 40px; /* Espaço para acomodar o ícone do olho */
-  }
+.inputContainer input[type="password"] {
+  padding-right: 40px; /* Espaço para acomodar o ícone do olho */
+}
   
-  .inputContainer .iconeOlho {
-    color: #112953;
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    cursor: pointer;
-    font-size: 25px;
-  }
+.inputContainer .iconeOlho {
+  color: #112953;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 25px;
+}

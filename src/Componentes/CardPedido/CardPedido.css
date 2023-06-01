@@ -118,12 +118,12 @@
 .produto-info {
     display: flex;
     flex-direction: column;
-  }
+}
   
-  .tipo-hamburguer-adicional {
+.tipo-hamburguer-adicional {
     margin-top: 4px;
     font-size: 14px;
     margin-left: 10px;
-  }
+}
   
   

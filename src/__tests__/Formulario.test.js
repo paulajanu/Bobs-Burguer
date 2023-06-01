@@ -3,7 +3,6 @@ import Formulario from '../Componentes/Formulario/Formulario.js';
 import { waitFor } from '@testing-library/react';
 import { useNavigate } from 'react-router-dom';
 import { render, fireEvent } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
 import login from '../API/api.js';
 import { Erros } from '../Erros/erros.js';
 
@@ -18,7 +17,7 @@ jest.mock('../Erros/erros.js', () => ({
 }));
 
 describe('Formulario', () => {
-test('Realiza o login e navega para a página de destino', async () => {
+  test('Realiza o login e navega para a página de destino', async () => {
     const navigate = jest.fn();
     useNavigate.mockReturnValue(navigate);
   
@@ -36,12 +35,11 @@ test('Realiza o login e navega para a página de destino', async () => {
     fireEvent.click(entrarButton);
   
     await waitFor(() => {
-        expect(login).toHaveBeenCalledWith('test@example.com', 'password');
-        expect(navigate).toHaveBeenCalledWith('/Menugarcom');
-      });
+      expect(login).toHaveBeenCalledWith('test@example.com', 'password');
+      expect(navigate).toHaveBeenCalledWith('/Menugarcom');
+    });
   });
-});
-  
+
   it('deve exibir uma mensagem de erro ao ocorrer uma falha no login', async () => {
     Erros.mockReturnValueOnce('Credenciais inválidas');
     login.mockRejectedValueOnce('Erro de login');
@@ -86,4 +84,7 @@ test('Realiza o login e navega para a página de destino', async () => {
       expect(getByTestId('mensagem-erro')).toHaveTextContent('Mensagem de erro customizada');
     });
   });
+});
+  
+  
   
