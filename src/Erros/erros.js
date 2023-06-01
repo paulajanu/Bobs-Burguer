@@ -8,5 +8,5 @@ export function Erros (message) {
             return 'Por favor, preencha todos os campos!'
         default:
             return 'Ops, ocorreu algum erro!';
-    }
-}
+    };
+};

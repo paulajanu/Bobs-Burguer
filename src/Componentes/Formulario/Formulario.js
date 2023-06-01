@@ -6,8 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import login from '../../API/api';
 import { Erros } from '../../Erros/erros';
-
-export let token;
+import { setItens } from "../../util/token.js";
 
 const Formulario = () => {
   const navigate = useNavigate();
@@ -22,18 +21,17 @@ const Formulario = () => {
         if (response.status === 200) {
           navigate('/Menugarcom');
           const resp = await response.json()
-          token = resp.accessToken;
+          console.log(resp)
+          setItens(resp.accessToken);
         } else if (response.status === 400) {
           return response.json()
           .then((mensagemErro) => {
             const erro = Erros(mensagemErro);
             setmensagemErro(erro);
           });
-        }
+        };
       })
       .catch((error) => {
-        // O bloco 'catch' é chamado se ocorrer um erro durante o processamento da requisição ou da resposta
-        // Nesse caso, atualiza o estado 'mensagemErro' com uma mensagem de erro genérica
         setmensagemErro(Erros(error));
       });
   };

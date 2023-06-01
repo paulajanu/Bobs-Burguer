@@ -1,32 +1,31 @@
 .formulario {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .formulario form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 80%;
-    background-color: rgba(255, 255, 255, 0.32);
-    border-radius: 20px;
-    padding: 36px 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 80%;
+  background-color: rgba(255, 255, 255, 0.32);
+  border-radius: 20px;
+  padding: 36px 64px;
 }
 
 .mostrar-senha {
-    position: relative;
-    /* padding-right: 24px; espaço para o ícone */
-  }
+  position: relative;
+}
 
-  .mostrar-senha > svg {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+.mostrar-senha > svg {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
-  .mensagem-erro {
-    color: #B22A16;
-    font-size: 20px;
-    margin-bottom: 0px;
-  }
+.mensagem-erro {
+  color: #B22A16;
+  font-size: 20px;
+  margin-bottom: 0px;
+}

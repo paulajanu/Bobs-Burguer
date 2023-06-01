@@ -41,33 +41,33 @@ function Mesas () {
             imagem: '/imagens/mesa-9.png',
             texto2: 'MESA 9',
         },
-      ];
+    ];
 
- return (
-    <main className='menu-garcom'>
-        <div className="menu-garcom-coluna">
-            <Menu imagem="/imagens/em-preparo.png" texto="EM PREPARO"/>
-            <Menu imagem="/imagens/prontos.png" texto="PRONTOS"/>
-            <Menu imagem="/imagens/entregues.png" texto="ENTREGUES"/>
-        </div>
-        <div className="menu-garcom-mesas">
-            <p className="mesas-instrucao">Escolha a mesa para fazer o pedido</p>
-            <div className="mesas">
-                {cardsMesas.map((cardsMesas, index) => (
-                <Cards
-                    key={index}
-                    imagem={cardsMesas.imagem}
-                    texto2={cardsMesas.texto2}
-                    cardsClassName="cards-mesa" 
-                    imagemClassName="imagem-card" 
-                    textoClassName="texto-card"
-                    numeroMesa={index + 1}
-                />
-                ))}
+    return (
+        <main className='menu-garcom'>
+            <div className="menu-garcom-coluna">
+                <Menu imagem="/imagens/em-preparo.png" texto="EM PREPARO"/>
+                <Menu imagem="/imagens/prontos.png" texto="PRONTOS"/>
+                <Menu imagem="/imagens/entregues.png" texto="ENTREGUES"/>
             </div>
-        </div>
-    </main>
- )
-}
+            <div className="menu-garcom-mesas">
+                <p className="mesas-instrucao">Escolha a mesa para fazer o pedido</p>
+                <div className="mesas">
+                    {cardsMesas.map((cardsMesas, index) => (
+                    <Cards
+                        key={index}
+                        imagem={cardsMesas.imagem}
+                        texto2={cardsMesas.texto2}
+                        cardsClassName="cards-mesa" 
+                        imagemClassName="imagem-card" 
+                        textoClassName="texto-card"
+                        numeroMesa={index + 1}
+                    />
+                    ))}
+                </div>
+            </div>
+        </main>
+    );
+};
 
 export default Mesas;

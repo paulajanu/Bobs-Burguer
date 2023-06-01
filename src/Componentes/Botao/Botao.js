@@ -10,6 +10,6 @@ const Botao = (props) => {
       {props.children}
     </button>
   );
-}
+};
 
 export default Botao;
