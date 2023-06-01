@@ -1,7 +1,6 @@
 import { getItens } from "../util/token.js";
 
 const APIURL = 'https://burger-queen-api-mock-alpha.vercel.app';
-const AUTH_TOKEN = getItens();
 
 export default function login(email, senha) {
     // console.log('Chamando a função login com email:', email, 'e senha:', senha);
@@ -26,7 +25,7 @@ export const obterProdutos = () => {
         method: "GET",
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${AUTH_TOKEN}`,
+            'Authorization': `Bearer ${getItens()}`,
         },
     });
 };
