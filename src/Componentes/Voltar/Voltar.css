@@ -21,3 +21,9 @@
     color: #112953;
     margin: 0;
 }
+
+@media (max-width: 712px) {
+.p-voltar {
+    font-size: 21px;
+}
+}

@@ -35,3 +35,9 @@
     background-color: #112359;
     color: #fff;
 }
+
+@media (max-width: 414px) {
+.entrar {
+    padding: 12px 33px;
+}
+}

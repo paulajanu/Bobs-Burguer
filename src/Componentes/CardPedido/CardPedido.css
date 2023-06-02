@@ -125,5 +125,44 @@
     font-size: 14px;
     margin-left: 10px;
 }
-  
+
+@media (max-width: 712px) {
+    .card-pedido {
+        width: 362px;
+        margin-left: 5px;
+        margin-bottom: 10px;
+    }
+    .resumo-compra {
+        font-size: 17px;
+    }
+    .icone-carrinho {
+        font-size: 29px;
+    }
+    .item {
+        font-size: 17px;
+        margin-right: 140px;
+    }
+    .quantidade {
+        font-size: 17px;
+    }
+    .preco {
+        font-size: 17px;
+    }
+    .produto-selecionado{
+        grid-template-columns: none;
+        font-size: 17px;
+    }
+    .preco-selecionado{ 
+        font-size: 17px;
+    }
+    .total {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-height: 600px) {
+    .card-pedido {
+        margin-bottom: 45px;
+    }
+}
   

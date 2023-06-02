@@ -30,3 +30,17 @@
     color: #112953;
     margin-right: 20px;
 }
+
+@media (max-width: 712px) {
+    .mesa-cliente {
+        font-size: 17px;
+        margin-left: 5px;
+        width: 362px;
+    }
+    .mesa {
+        font-size: 17px;
+    }
+    .input-transparente {
+        width: 130px;
+    }
+}
