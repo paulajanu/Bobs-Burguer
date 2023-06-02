@@ -7,3 +7,18 @@
  width: 330px;
  height: 358px;
 }
+
+ /* regras de estilo para telas menores ou iguais a 375px */
+@media (max-width: 712px) {
+    .logo img {
+        width: 272px;
+        height: 300px;
+    }
+}
+
+@media screen and (min-height: 600px) and (max-height: 900px) {
+    .logo img {
+        width: 280px;
+        height: 308px;
+    }
+}

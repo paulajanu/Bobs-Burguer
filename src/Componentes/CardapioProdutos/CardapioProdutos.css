@@ -137,3 +137,34 @@ input[type="radio"] {
   gap: 40px;
   margin-top: 20px;
 }
+
+@media (max-width: 712px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .cardapio-filtro {
+    height: 99px;
+    margin-left: 5px;
+    width: 362px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .filtro-cardapio {
+    font-size: 17px;
+  }
+  .cardapio-produtos {
+    width: 362px;
+    margin-left: 5px;
+  }
+  .cards-produto {
+    height: 128px;
+    width: 126px;
+  }
+}
+
+@media screen and (min-height: 600px) {
+  .cardapio-produtos {
+    margin-bottom: 45px;
+  }
+}

@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 80%;
+  max-width: 65%;
   background-color: rgba(255, 255, 255, 0.32);
   border-radius: 20px;
   padding: 36px 64px;
@@ -28,4 +28,14 @@
   color: #B22A16;
   font-size: 20px;
   margin-bottom: 0px;
+}
+
+@media (max-width: 414px) {
+ .formulario form {
+  padding: 25px 45px;
+ }
+
+ .campoTexto label {
+  font-size: 24px;
+ }
 }
