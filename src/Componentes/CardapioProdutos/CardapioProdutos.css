@@ -15,7 +15,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.40);;
+  background-color: rgba(255, 255, 255, 0.40);
+  ;
   height: 57px;
   width: 660px;
   margin-top: 20px;
@@ -35,7 +36,7 @@
 }
 
 .filtro-cardapio:focus {
-  background-color: rgba(17, 35, 89, 0.4); 
+  background-color: rgba(17, 35, 89, 0.4);
 }
 
 .container {
@@ -43,7 +44,7 @@
   justify-content: space-around;
   align-items: flex-start;
 }
-  
+
 .content-left {
   display: flex;
   flex-direction: column;
@@ -68,34 +69,35 @@
   flex-direction: column;
   align-items: center;
 }
- 
+
 .radio-container {
   display: flex;
   flex-direction: row;
   gap: 64px;
 }
-  
-.radio-container > div {
+
+.radio-container>div {
   display: flex;
   align-items: center;
 }
 
-.grupo-radio > label {
+.grupo-radio>label {
   font-size: 22px;
   color: #FFF;
 }
-  
+
 .imagem-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-top: 10px;
-  gap: 132px; /* Espaçamento entre as imagens */
+  gap: 132px;
+  /* Espaçamento entre as imagens */
 }
-  
+
 .imagem-modal {
   margin: 0 5px;
-  width:50px;
+  width: 50px;
 }
 
 .instrucao-selecao {
@@ -104,21 +106,21 @@
 }
 
 input[type="radio"] {
-  width: 20px; 
-  height: 20px; 
+  width: 20px;
+  height: 20px;
 }
-  
+
 .grupo-radio {
   display: flex;
   align-items: center;
 }
 
 .espacamento-extra {
-  margin-left: 30px; 
+  margin-left: 30px;
 }
-  
+
 .espacamento-extra-imagem {
-  margin-left: 20px; 
+  margin-left: 20px;
 }
 
 .imagem-modal-maior {
@@ -143,6 +145,7 @@ input[type="radio"] {
     display: flex;
     flex-direction: column;
   }
+
   .cardapio-filtro {
     height: 99px;
     margin-left: 5px;
@@ -150,17 +153,57 @@ input[type="radio"] {
     flex-wrap: wrap;
     justify-content: space-around;
   }
+
   .filtro-cardapio {
     font-size: 17px;
   }
+
   .cardapio-produtos {
     width: 362px;
     margin-left: 5px;
   }
+
   .cards-produto {
     height: 128px;
     width: 126px;
   }
+
+  .modal {
+    width: 350px;
+    height: 363px
+  }
+
+  .instrucao-selecao {
+    font-size: 22px;
+  }
+
+  .radio-container {
+    gap: 30px;
+  }
+
+  .grupo-radio>label {
+    font-size: 14px;
+  }
+
+  .imagem-container {
+    gap: 70px;
+  }
+
+  input[type=radio] {
+    height: 16px;
+    width: 16px;
+  }
+
+  .imagem-modal {
+    width: 37px;
+  }
+
+  .radio-container-opcional {
+    gap: 72px;
+  }
+  .imagem-modal-maior {
+    width: 52px;
+}
 }
 
 @media screen and (min-height: 600px) {

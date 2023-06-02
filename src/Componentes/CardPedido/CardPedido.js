@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Botao from '../Botao/Botao';
 import './CardPedido.css';
 import {FaShoppingCart, FaMinus, FaPlus, FaTrash } from 'react-icons/fa';
+import { enviarPedido } from '../../API/api';
 
 const CardPedido = ({ produtosSelecionados, removerProduto, tipoHamburguer, adicional }) => {
   const [quantidadesSelecionadas, setQuantidadesSelecionadas] = useState({});
@@ -81,7 +82,7 @@ const CardPedido = ({ produtosSelecionados, removerProduto, tipoHamburguer, adic
         </p>
       </div>
       <div className="botoes">
-        <Botao className="azul confirmar-cancelar">CONFIRMAR</Botao>
+        <Botao className="azul confirmar-cancelar" onClick={() => enviarPedido()}>CONFIRMAR</Botao>
       </div>
     </div>
   );

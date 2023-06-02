@@ -29,3 +29,29 @@ export const obterProdutos = () => {
         },
     });
 };
+
+export const enviarPedido = (idUsuario, cliente, arrProducts, dataEntrada) => {
+
+    return fetch(`${APIURL}/orders`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${getItens()}`,
+      },
+      body: JSON.stringify({
+        userId: idUsuario,
+        client: cliente,
+        products: arrProducts,
+        status: "pending",
+        dateEntry: dataEntrada,
+      }),
+    })
+      .then(response => response.json()) // Converter a resposta em json
+      .then(json => console.log(json))
+      .catch(error => {
+        console.log(error)
+        throw error
+      });
+  };
+
+  
