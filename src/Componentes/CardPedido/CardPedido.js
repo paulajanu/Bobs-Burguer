@@ -11,6 +11,8 @@ const CardPedido = ({ produtosSelecionados, removerProduto, tipoHamburguer, adic
   const {cliente} = useContext(ContextoCliente);
   const [quantidadesSelecionadas, setQuantidadesSelecionadas] = useState({});
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [modalNomeVazioIsOpen, setModalNomeVazioIsOpen] = useState(false);
+  const [modalResumoVazioIsOpen, setModalResumoVazioIsOpen] = useState(false);
 
   const incrementarQuantidade = (produto) => {
     setQuantidadesSelecionadas((prevQuantidades) => ({
@@ -36,33 +38,40 @@ const CardPedido = ({ produtosSelecionados, removerProduto, tipoHamburguer, adic
   };
 
   const btnConfirmar = () => {
-    // Mapeando os produtos selecionados e criando um novo array com as informações necessárias
+    // Verificando se o nome do cliente foi preenchido
+    if (cliente.trim() === '') {
+      setModalNomeVazioIsOpen(true);
+      return;
+    }
+  
+    // Verificando se há pelo menos um pedido selecionado
+    if (produtosSelecionados.length === 0) {
+      setModalResumoVazioIsOpen(true);
+      return;
+    }
+  
     const arrayProdutos = produtosSelecionados.map((produto) => {
-      // Verificando a quantidade selecionada do produto ou definindo como 1 caso não tenha sido selecionada
       const quantidadeSelecionada = quantidadesSelecionadas[produto.id] || 1;
-      // Calculando o preço total do produto multiplicando o preço unitário pela quantidade selecionada
       const precoTotal = (produto.price * quantidadeSelecionada).toFixed(2);
   
-      // Retornando um objeto com as informações do produto para o novo array
       return {
         id: produto.id,
         name: produto.name,
         quantity: quantidadeSelecionada,
-        price: precoTotal
+        price: precoTotal,
       };
     });
-    
-    const idUsuario = getIdUsuario(); 
+  
+    const idUsuario = getIdUsuario();
     const dataEntrada = new Date().toLocaleString();
-
-    // Chamando a função enviarPedido para enviar os dados para a API
+  
     enviarPedido(idUsuario, cliente, arrayProdutos, dataEntrada)
       .then(() => {
-        setIsOpen(true);
-    })
-    .catch((error) => {
-      console.error('Erro ao realizar pedido', error);
-    });
+        setIsOpen(true); // Abre o modal somente se todas as verificações passarem
+      })
+      .catch((error) => {
+        console.error('Erro ao realizar pedido', error);
+      });
   };
 
   return (
@@ -136,6 +145,46 @@ const CardPedido = ({ produtosSelecionados, removerProduto, tipoHamburguer, adic
           <div className="conteudo-principal-modal">
             <img className='imagem-pedido-realizado' src="/imagens/pedido-realizado.png" alt="Imagem da confirmação do pedido" />
             <p className='p-pedido-realizado'>PEDIDO REALIZADO!</p>
+          </div>
+        </Modal>
+        <Modal
+          className="modal-pedido-realizado"
+          isOpen={modalNomeVazioIsOpen}
+          style={{
+            overlay: {
+            backgroundColor: "rgba(0, 0, 0, 0.7)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+            },
+          }}
+        >
+          <div className="icone-modal">
+            <FaTimes className="icone-fechar-modal" onClick={() => setModalNomeVazioIsOpen(false)}/>
+          </div>
+          <div className="conteudo-principal-modal">
+            <img className='imagem-pedido-realizado' src="/imagens/sem-nome.png" alt="Imagem de sem nome do cliente" />
+            <p className='p-pedido-realizado'>Preencha o nome do cliente!</p>
+          </div>
+        </Modal>
+        <Modal
+          className="modal-pedido-realizado"
+          isOpen={modalResumoVazioIsOpen}
+          style={{
+            overlay: {
+            backgroundColor: "rgba(0, 0, 0, 0.7)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+            },
+          }}
+        >
+          <div className="icone-modal">
+            <FaTimes className="icone-fechar-modal" onClick={() => setModalResumoVazioIsOpen(false)}/>
+          </div>
+          <div className="conteudo-principal-modal">
+            <img className='imagem-pedido-realizado' src="/imagens/resumo-vazio.png" alt="Imagem de resumo do pedido vazio" />
+            <p className='p-pedido-realizado'>Nenhum produto selecionado!</p>
           </div>
         </Modal>
       </div>
