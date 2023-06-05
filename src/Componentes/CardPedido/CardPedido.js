@@ -1,16 +1,16 @@
 import { useState, useContext } from 'react';
 import Botao from '../Botao/Botao';
 import './CardPedido.css';
-import {FaShoppingCart, FaMinus, FaPlus, FaTrash } from 'react-icons/fa';
+import { FaShoppingCart, FaMinus, FaPlus, FaTrash, FaTimes } from 'react-icons/fa';
 import { enviarPedido } from '../../API/api';
 import { ContextoCliente } from '../../Contextos/contextoCliente';
 import { getIdUsuario } from '../../util/localStorage';
-
-
+import Modal from 'react-modal';
 
 const CardPedido = ({ produtosSelecionados, removerProduto, tipoHamburguer, adicional }) => {
   const {cliente} = useContext(ContextoCliente);
   const [quantidadesSelecionadas, setQuantidadesSelecionadas] = useState({});
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   const incrementarQuantidade = (produto) => {
     setQuantidadesSelecionadas((prevQuantidades) => ({
@@ -58,15 +58,13 @@ const CardPedido = ({ produtosSelecionados, removerProduto, tipoHamburguer, adic
     // Chamando a função enviarPedido para enviar os dados para a API
     enviarPedido(idUsuario, cliente, arrayProdutos, dataEntrada)
       .then(() => {
-      // Colocar o modal de confirmação
+        setIsOpen(true);
     })
     .catch((error) => {
-    console.log(error);
-  // Tratar o erro, se necessário
+      console.error('Erro ao realizar pedido', error);
     });
   };
 
-    
   return (
     <div className="card-pedido">
       <p className="resumo-compra">
@@ -120,6 +118,26 @@ const CardPedido = ({ produtosSelecionados, removerProduto, tipoHamburguer, adic
       </div>
       <div className="botoes">
         <Botao className="azul confirmar-cancelar" onClick={btnConfirmar}>CONFIRMAR</Botao>
+        <Modal
+          className="modal-pedido-realizado"
+          isOpen={modalIsOpen}
+          style={{
+            overlay: {
+            backgroundColor: "rgba(0, 0, 0, 0.7)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+            },
+          }}
+        >
+          <div className="icone-modal">
+            <FaTimes className="icone-fechar-modal" onClick={() => setIsOpen(false)}/>
+          </div>
+          <div className="conteudo-principal-modal">
+            <img className='imagem-pedido-realizado' src="/imagens/pedido-realizado.png" alt="Imagem da confirmação do pedido" />
+            <p className='p-pedido-realizado'>PEDIDO REALIZADO!</p>
+          </div>
+        </Modal>
       </div>
     </div>
   );

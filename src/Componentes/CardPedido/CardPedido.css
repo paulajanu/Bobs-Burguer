@@ -126,6 +126,41 @@
     margin-left: 10px;
 }
 
+.modal-pedido-realizado {
+    background-color: #4183A5;
+    width: 597px;
+    height: 466px;
+    border-radius: 20px;
+}
+
+.icone-modal {
+    display: flex;
+    justify-content: flex-end;
+} 
+
+.icone-fechar-modal {
+    font-size: 40px;
+    color: #112953;
+    margin: 10px 10px 0 0;
+}  
+
+.conteudo-principal-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.imagem-pedido-realizado {
+    width: 310px;
+}
+
+.p-pedido-realizado {
+    font-size: 36px;
+    color: #fff;
+    margin: 10px 0 0 0 ;
+}
+
 @media (max-width: 712px) {
     .card-pedido {
         width: 362px;
