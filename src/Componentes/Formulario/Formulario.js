@@ -24,7 +24,7 @@ const Formulario = () => {
           console.log(resp)
           console.log(resp.user.id)
           setItens(resp.accessToken);
-          // setIdUsuario(resp.user.id);
+          setIdUsuario(resp.user.id);
         } else if (response.status === 400) {
           return response.json()
           .then((mensagemErro) => {

@@ -6,12 +6,12 @@ const getItens = () => {
     return localStorage.getItem("token")
 }
 
-// const setIdUsuario = (userId) => {
-//     localStorage.setItem("idUsuario", userId)
-// }
+const setIdUsuario = (userId) => {
+    localStorage.setItem("idUsuario", userId)
+}
 
-// const getIdUsuario = () => {
-//     return localStorage.getItem("idUsuario")
-// }
+const getIdUsuario = () => {
+    return localStorage.getItem("idUsuario")
+}
 
-export {setItens, getItens,}
+export {setItens, getItens, setIdUsuario, getIdUsuario}
