@@ -1,4 +1,4 @@
-import { getItens, getIdUsuario } from "../util/localStorage.js";
+import { getItens } from "../util/localStorage.js";
 
 const APIURL = 'https://burger-queen-api-mock-alpha.vercel.app';
 

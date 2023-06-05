@@ -4,6 +4,7 @@ import './CardPedido.css';
 import {FaShoppingCart, FaMinus, FaPlus, FaTrash } from 'react-icons/fa';
 import { enviarPedido } from '../../API/api';
 import { ContextoCliente } from '../../Contextos/contextoCliente';
+import { getIdUsuario } from '../../util/localStorage';
 
 
 
@@ -50,11 +51,12 @@ const CardPedido = ({ produtosSelecionados, removerProduto, tipoHamburguer, adic
         price: precoTotal
       };
     });
-
+    
+    const idUsuario = getIdUsuario(); 
     const dataEntrada = new Date().toLocaleString();
 
     // Chamando a função enviarPedido para enviar os dados para a API
-    enviarPedido(cliente, arrayProdutos, dataEntrada)
+    enviarPedido(idUsuario, cliente, arrayProdutos, dataEntrada)
       .then(() => {
       // Colocar o modal de confirmação
     })
