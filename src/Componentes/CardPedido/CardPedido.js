@@ -143,7 +143,7 @@ const CardPedido = ({ produtosSelecionados, removerProduto, tipoHamburguer, adic
             <FaTimes className="icone-fechar-modal" onClick={() => setIsOpen(false)}/>
           </div>
           <div className="conteudo-principal-modal">
-            <img className='imagem-pedido-realizado' src="/imagens/pedido-realizado.png" alt="Imagem da confirmação do pedido" />
+            <img className='imagem-pedido-realizado' src="/imagens/pedido-confirmado.png" alt="Imagem da confirmação do pedido" />
             <p className='p-pedido-realizado'>PEDIDO REALIZADO!</p>
           </div>
         </Modal>
