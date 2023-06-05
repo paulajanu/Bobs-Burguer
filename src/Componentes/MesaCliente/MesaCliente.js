@@ -1,15 +1,16 @@
 import React from 'react';
 import './MesaCliente.css';
-import { useState } from 'react';
+import { useContext } from 'react';
+import { ContextoCliente } from '../../Contextos/contextoCliente';
 
 
 const MesaCliente = ({ mesa }) => {
-    const [cliente, setCliente] = useState(''); 
+    const {cliente, addCliente} = useContext(ContextoCliente);
 
     const nomeCliente = (event) => {
         const inputValue = event.target.value;
         console.log(inputValue); 
-        setCliente(inputValue);
+        addCliente(inputValue);
     };
 
     return (

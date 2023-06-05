@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState} from 'react';
 import Cards from '../Cards/Cards.js';
 import { obterProdutos } from '../../API/api.js';
 import './CardapioProdutos.css';
@@ -8,6 +8,7 @@ import queryString from 'query-string';
 import { useLocation } from 'react-router-dom';
 import Modal from 'react-modal';
 import Botao from '../Botao/Botao.js';
+import {ProvedorCliente } from '../../Contextos/contextoCliente.js';
 
 const CardapioProdutos = () => {
   const [produtos, setProdutos] = useState([]);
@@ -114,6 +115,7 @@ const CardapioProdutos = () => {
         </div>
       </div>
       <div className="content-right">
+        <ProvedorCliente>
         <MesaCliente mesa={mesaSelecionada} />
           <CardPedido
             produtosSelecionados={produtosSelecionados}
@@ -121,6 +123,7 @@ const CardapioProdutos = () => {
             tipoHamburguer={tipoHamburguer}
             adicional={adicional}
           />
+          </ProvedorCliente>
         <Modal
           className="modal"
           isOpen={modalIsOpen}

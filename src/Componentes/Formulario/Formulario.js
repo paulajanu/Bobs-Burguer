@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import login from '../../API/api';
 import { Erros } from '../../Erros/erros';
-import { setItens } from "../../util/token.js";
+import { setIdUsuario, setItens } from "../../util/localStorage.js";
 
 const Formulario = () => {
   const navigate = useNavigate();
@@ -22,7 +22,9 @@ const Formulario = () => {
           navigate('/Menugarcom');
           const resp = await response.json()
           console.log(resp)
+          console.log(resp.user.id)
           setItens(resp.accessToken);
+          // setIdUsuario(resp.user.id);
         } else if (response.status === 400) {
           return response.json()
           .then((mensagemErro) => {

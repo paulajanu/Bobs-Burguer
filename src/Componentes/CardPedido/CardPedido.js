@@ -1,10 +1,14 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Botao from '../Botao/Botao';
 import './CardPedido.css';
 import {FaShoppingCart, FaMinus, FaPlus, FaTrash } from 'react-icons/fa';
 import { enviarPedido } from '../../API/api';
+import { ContextoCliente } from '../../Contextos/contextoCliente';
+
+
 
 const CardPedido = ({ produtosSelecionados, removerProduto, tipoHamburguer, adicional }) => {
+  const {cliente} = useContext(ContextoCliente);
   const [quantidadesSelecionadas, setQuantidadesSelecionadas] = useState({});
 
   const incrementarQuantidade = (produto) => {
@@ -29,6 +33,37 @@ const CardPedido = ({ produtosSelecionados, removerProduto, tipoHamburguer, adic
         };
     });
   };
+
+  const btnConfirmar = () => {
+    // Mapeando os produtos selecionados e criando um novo array com as informações necessárias
+    const arrayProdutos = produtosSelecionados.map((produto) => {
+      // Verificando a quantidade selecionada do produto ou definindo como 1 caso não tenha sido selecionada
+      const quantidadeSelecionada = quantidadesSelecionadas[produto.id] || 1;
+      // Calculando o preço total do produto multiplicando o preço unitário pela quantidade selecionada
+      const precoTotal = (produto.price * quantidadeSelecionada).toFixed(2);
+  
+      // Retornando um objeto com as informações do produto para o novo array
+      return {
+        id: produto.id,
+        name: produto.name,
+        quantity: quantidadeSelecionada,
+        price: precoTotal
+      };
+    });
+
+    const dataEntrada = new Date().toLocaleString();
+
+    // Chamando a função enviarPedido para enviar os dados para a API
+    enviarPedido(cliente, arrayProdutos, dataEntrada)
+      .then(() => {
+      // Colocar o modal de confirmação
+    })
+    .catch((error) => {
+    console.log(error);
+  // Tratar o erro, se necessário
+    });
+  };
+
     
   return (
     <div className="card-pedido">
@@ -82,7 +117,7 @@ const CardPedido = ({ produtosSelecionados, removerProduto, tipoHamburguer, adic
         </p>
       </div>
       <div className="botoes">
-        <Botao className="azul confirmar-cancelar" onClick={() => enviarPedido()}>CONFIRMAR</Botao>
+        <Botao className="azul confirmar-cancelar" onClick={btnConfirmar}>CONFIRMAR</Botao>
       </div>
     </div>
   );

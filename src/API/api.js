@@ -1,4 +1,4 @@
-import { getItens } from "../util/token.js";
+import { getItens, getIdUsuario } from "../util/localStorage.js";
 
 const APIURL = 'https://burger-queen-api-mock-alpha.vercel.app';
 
@@ -30,7 +30,7 @@ export const obterProdutos = () => {
     });
 };
 
-export const enviarPedido = (idUsuario, cliente, arrProducts, dataEntrada) => {
+export const enviarPedido = (idUsuario, cliente, arrayProdutos, dataEntrada) => {
 
     return fetch(`${APIURL}/orders`, {
       method: "POST",
@@ -41,7 +41,7 @@ export const enviarPedido = (idUsuario, cliente, arrProducts, dataEntrada) => {
       body: JSON.stringify({
         userId: idUsuario,
         client: cliente,
-        products: arrProducts,
+        products: arrayProdutos,
         status: "pending",
         dateEntry: dataEntrada,
       }),
