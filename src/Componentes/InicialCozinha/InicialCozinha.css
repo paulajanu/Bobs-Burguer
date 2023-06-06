@@ -1,0 +1,36 @@
+
+.pedidos-instrucao {
+    display: inline-block;
+    background-color: #112953;
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-bottom: 30px;
+    margin-top: 65px;
+}
+
+.menu-cozinha {
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
+
+.menu-garcom-coluna {
+    grid-column: 1;
+}
+
+.pedidos {
+    grid-column: 2;
+    text-align: center;
+}
+
+.div-img-sem-pedidos {
+    display: flex;
+    justify-content: center;
+}  
+
+.img-sem-pedidos {
+    margin-top: 248px;
+    width: 373px;
+}

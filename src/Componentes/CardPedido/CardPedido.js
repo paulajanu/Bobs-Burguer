@@ -6,6 +6,7 @@ import { enviarPedido } from '../../API/api';
 import { ContextoCliente } from '../../Contextos/contextoCliente';
 import { getIdUsuario } from '../../util/localStorage';
 import Modal from 'react-modal';
+import { useNavigate } from 'react-router';
 
 const CardPedido = ({ produtosSelecionados, removerProduto, tipoHamburguer, adicional }) => {
   const {cliente} = useContext(ContextoCliente);
@@ -13,6 +14,7 @@ const CardPedido = ({ produtosSelecionados, removerProduto, tipoHamburguer, adic
   const [modalIsOpen, setIsOpen] = useState(false);
   const [modalNomeVazioIsOpen, setModalNomeVazioIsOpen] = useState(false);
   const [modalResumoVazioIsOpen, setModalResumoVazioIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const incrementarQuantidade = (produto) => {
     setQuantidadesSelecionadas((prevQuantidades) => ({
@@ -20,6 +22,11 @@ const CardPedido = ({ produtosSelecionados, removerProduto, tipoHamburguer, adic
       [produto.id]: (prevQuantidades[produto.id] || 0) + 1 || 1 // Incrementa a quantidade do produto selecionado
     }));
   };
+
+  const fecharModal = () => {
+    setIsOpen(false);
+    navigate('/Menugarcom');
+  }
     
   const decrementarQuantidade = (produto) => {
     setQuantidadesSelecionadas((prevQuantidades) => {
@@ -140,7 +147,7 @@ const CardPedido = ({ produtosSelecionados, removerProduto, tipoHamburguer, adic
           }}
         >
           <div className="icone-modal">
-            <FaTimes className="icone-fechar-modal" onClick={() => setIsOpen(false)}/>
+            <FaTimes className="icone-fechar-modal" onClick={fecharModal}/>
           </div>
           <div className="conteudo-principal-modal">
             <img className='imagem-pedido-realizado' src="/imagens/pedido-confirmado.png" alt="Imagem da confirmação do pedido" />
