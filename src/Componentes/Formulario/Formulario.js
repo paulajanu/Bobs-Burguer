@@ -19,19 +19,24 @@ const Formulario = () => {
     login(email, senha)
       .then(async(response) => {
         if (response.status === 200) {
-          navigate('/Menugarcom');
-          const resp = await response.json()
-          console.log(resp)
-          console.log(resp.user.id)
+          const resp = await response.json();
+          console.log(resp);
+          console.log(resp.user.id);
           setItens(resp.accessToken);
           setIdUsuario(resp.user.id);
+  
+          if (resp.user.role === 'garcom') {
+            navigate('/MenuGarcom');
+          } else if (resp.user.role === 'cozinha') {
+            navigate('/Cozinha');
+          }
         } else if (response.status === 400) {
           return response.json()
           .then((mensagemErro) => {
             const erro = Erros(mensagemErro);
             setmensagemErro(erro);
           });
-        };
+        }
       })
       .catch((error) => {
         setmensagemErro(Erros(error));
