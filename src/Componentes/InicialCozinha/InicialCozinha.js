@@ -2,8 +2,6 @@ import './InicialCozinha.css';
 import Menu from '../Menu/Menu';
 import { obterPedidos } from '../../API/api';
 import { useEffect, useState } from 'react';
-import Cards from '../Cards/Cards';
-
 
 const InicialCozinha = () => {
 
@@ -48,13 +46,13 @@ const InicialCozinha = () => {
         <div className="cards-container">
       {pedidos.map((pedido) => (
         <div className="pedido-card" key={pedido.id}>
-          <p>Nome do pedido: {pedido.client}</p>
+          <p>Cliente: {pedido.client}</p>
+          <p>Data de entrada: {pedido.dateEntry}</p>
           <div className="produtos-container">
+            <p>Resumo do Pedido</p>
             {pedido.products.map((produto) => (
               <div className="produto-card" key={produto.id}>
-                <p>{produto.name}</p>
-                <p>Preço: R$ {produto.price}</p>
-                <p>Quantidade: {produto.quantity}</p>
+                <p>{produto.quantity} - {produto.name}</p>
               </div>
             ))}
           </div>
@@ -63,13 +61,6 @@ const InicialCozinha = () => {
     </div>
   )}
     </div>
-
-        {/* <div className='pedidos'>
-            <p className="pedidos-instrucao">Sem pedidos no momento!</p>
-            <div className='div-img-sem-pedidos'>
-                <img className='img-sem-pedidos' src="/imagens/sem-pedidos.png" alt="Imagem de sem pedidos"/>
-            </div>
-         </div> */}
          </main>
 )
 }
