@@ -36,6 +36,16 @@
     color: #fff;
 }
 
+.vermelho {
+    background-color: #B22A16;
+    color: #fff;
+}
+
+.verde {
+    background-color: #1D5902;
+    color: #fff;
+}
+
 @media (max-width: 712px) {
 .entrar {
     padding: 12px 33px;
