@@ -45,11 +45,10 @@ const InicialCozinha = () => {
         ) : (
           pedidos.map((pedido) => (
             <div className="cards-pedidos" key={pedido.id}>
-                <div className="pedido-card">
-                <p className='pedido'>Cliente: {pedido.client}</p>
-                <p className='pedido'>Data de entrada: {pedido.dateEntry}</p>
-                <div className="produtos-container">
-                  <p className='titulo-pedido'>Resumo do Pedido</p>
+                <div className="informacoes">
+                    <p className='pedido'>Cliente: {pedido.client}</p>
+                    <p className='pedido'>Data de entrada: {pedido.dateEntry}</p>
+                    <p className='titulo-pedido'>Resumo do Pedido</p>
                   {pedido.products.map((produto) => (
                     <div className="produto-card" key={produto.id}>
                       <p className='pedido'>{produto.quantity} - {produto.name}</p>
@@ -59,7 +58,6 @@ const InicialCozinha = () => {
               <div className='botoes-pedidos'>
                 <Botao className="confirmar-cancelar verde">PREPARAR</Botao>
                 <Botao className="confirmar-cancelar vermelho">CANCELAR</Botao>
-                </div>
               </div>
             </div>
           ))
