@@ -1,20 +1,24 @@
-import './InicialCozinha.css';
+import './AguardandoProdução.css';
 import Menu from '../Menu/Menu';
 import { obterPedidos } from '../../API/api';
 import { useEffect, useState } from 'react';
 import Botao from '../Botao/Botao';
+import { atualizarStatusPedido } from '../../API/api';
+import { Link } from 'react-router-dom';
 
-const InicialCozinha = () => {
+const AguardandoProducao = () => {
   const [pedidos, setPedidos] = useState([]);
 
   useEffect(() => {
     const fetchPedidos = async () => {
       try {
         const response = await obterPedidos();
-
+  
         if (response.ok) {
           const data = await response.json();
-          setPedidos(data);
+          // Filtra os pedidos com o status "PENDENTE"
+          const pedidosPendentes = data.filter((pedido) => pedido.status === 'Pendente');
+          setPedidos(pedidosPendentes);
         } else {
           console.error('Erro ao obter os pedidos da API');
         }
@@ -22,18 +26,39 @@ const InicialCozinha = () => {
         console.error('Erro ao obter os pedidos da API', error);
       }
     };
-
+  
     fetchPedidos();
   }, []);
+  
 
+  const btnPrepararPedido = async (pedidoId) => {
+    console.log('pedidoID', pedidoId);
+    try {
+      // Chama a função atualizarStatusPedido para atualizar o status do pedido para 'Em preparo'
+      await atualizarStatusPedido(pedidoId, 'Em preparo');
+      // Remove o pedido da lista de pedidos
+      setPedidos((pedidosAnteriores) =>
+        pedidosAnteriores.filter((pedido) => pedido.id !== pedidoId)
+      );
+    } catch (error) {
+      console.error('Erro ao preparar o pedido', error);
+    }
+  };
+  
+  
   return (
     <main className='menu-cozinha'>
       <div className="menu-cozinha-coluna">
-        <Menu imagem="/imagens/em-preparo.png" texto="EM PRODUÇÃO" />
-        <Menu imagem="/imagens/em-preparo2.png" texto="EM PREPARO" />
-        <Menu imagem="/imagens/prontos.png" texto="PRONTOS" />
-      </div>
-
+        <Link to="/Cozinha">
+          <Menu imagem="/imagens/em-preparo.png" texto="PENDENTES" />
+        </Link>
+        <Link to="/em-preparo">
+          <Menu imagem="/imagens/em-preparo2.png" texto="EM PREPARO" />
+        </Link>
+        <Link to="/prontos">
+          <Menu imagem="/imagens/prontos.png" texto="PRONTOS" />
+        </Link>
+        </div>
       <div className='pedidos'>
         {pedidos.length === 0 ? (
           <div>
@@ -56,7 +81,7 @@ const InicialCozinha = () => {
                   ))}
                 </div>
               <div className='botoes-pedidos'>
-                <Botao className="confirmar-cancelar verde">PREPARAR</Botao>
+                <Botao className="confirmar-cancelar verde" onClick={() => btnPrepararPedido(pedido.id)}>PREPARAR</Botao>
                 <Botao className="confirmar-cancelar vermelho">CANCELAR</Botao>
               </div>
             </div>
@@ -67,4 +92,4 @@ const InicialCozinha = () => {
   );
 };
 
-export default InicialCozinha;
+export default AguardandoProducao;

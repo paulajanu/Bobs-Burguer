@@ -42,16 +42,20 @@ export const enviarPedido = (idUsuario, cliente, arrayProdutos, dataEntrada) => 
       userId: idUsuario,
       client: cliente,
       products: arrayProdutos,
-      status: "pending",
+      status: "Pendente",
       dateEntry: dataEntrada,
     }),
   })
-    .then(response => response.json())
-    .then(json => console.log(json))
-    .catch(error => {
-      console.log(error)
-      throw error
-    });
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Erro ao enviar o pedido');
+    }
+    return response.json();
+  })
+  .catch(error => {
+    console.log(error);
+    throw error;
+  });
 };
 
 export const obterPedidos = () => {
@@ -62,6 +66,32 @@ export const obterPedidos = () => {
           'Authorization': `Bearer ${getItens()}`,
       },
   });
+};
+
+export const atualizarStatusPedido = async (pedidoId, novoStatus,) => {
+  try {
+    // const dataProcessamento = formatarData(new Date());
+    const response = await fetch(`${APIURL}/orders/${pedidoId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${getItens()}`,
+      },
+      body: JSON.stringify({
+        status: novoStatus,
+        // dateProcessed: dataProcessamento,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error('Erro ao atualizar o status do pedido');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw error;
+  }
 };
 
   
