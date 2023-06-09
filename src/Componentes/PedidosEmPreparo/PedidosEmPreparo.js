@@ -73,6 +73,7 @@ const PedidosEmPreparo = () => {
               <div className="informacoes">
                 <p className='pedido'>Cliente: {pedido.client}</p>
                 <p className='pedido'>Data de entrada: {pedido.dateEntry}</p>
+                <p className='pedido'>Inicio do Preparo: {pedido.dateProcessed}</p>
                 <p className='titulo-pedido'>Resumo do Pedido</p>
                 {pedido.products.map((produto) => (
                   <div className="produto-card" key={produto.id}>

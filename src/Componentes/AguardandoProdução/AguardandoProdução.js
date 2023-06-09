@@ -7,6 +7,7 @@ import { atualizarStatusPedido } from '../../API/api';
 import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
 import { FaTimes } from 'react-icons/fa';
+import { excluirPedido } from '../../API/api';
 
 const AguardandoProducao = () => {
   const [pedidos, setPedidos] = useState([]);
@@ -48,6 +49,20 @@ const AguardandoProducao = () => {
       console.error('Erro ao preparar o pedido', error);
     }
   };
+
+  const btnCancelarPedido = async (pedidoId) => {
+    console.log('pedidoID', pedidoId);
+    try {
+      // Chama a função excluirPedido para excluir o pedido da API
+      await excluirPedido(pedidoId);
+      // Remove o pedido da lista de pedidos
+      setPedidos((pedidosAnteriores) =>
+        pedidosAnteriores.filter((pedido) => pedido.id !== pedidoId)
+      );
+    } catch (error) {
+      console.error('Erro ao cancelar o pedido', error);
+    }
+  };
   
   Modal.setAppElement('#root');
 
@@ -87,7 +102,7 @@ const AguardandoProducao = () => {
                 </div>
               <div className='botoes-pedidos'>
                 <Botao className="confirmar-cancelar verde" onClick={() => btnPrepararPedido(pedido.id)}>PREPARAR</Botao>
-                <Botao className="confirmar-cancelar vermelho">CANCELAR</Botao>
+                <Botao className="confirmar-cancelar vermelho"  onClick={() => btnCancelarPedido(pedido.id)}>CANCELAR</Botao>
               </div>
             </div>
           ))
