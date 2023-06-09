@@ -5,9 +5,12 @@ import { useEffect, useState } from 'react';
 import Botao from '../Botao/Botao';
 import { atualizarStatusPedido } from '../../API/api';
 import { Link } from 'react-router-dom';
+import Modal from 'react-modal';
+import { FaTimes } from 'react-icons/fa';
 
 const AguardandoProducao = () => {
   const [pedidos, setPedidos] = useState([]);
+  const [modalParaProducaoIsOpen, setParaProducaoIsOpen] = useState(false);
 
   useEffect(() => {
     const fetchPedidos = async () => {
@@ -40,12 +43,14 @@ const AguardandoProducao = () => {
       setPedidos((pedidosAnteriores) =>
         pedidosAnteriores.filter((pedido) => pedido.id !== pedidoId)
       );
+      setParaProducaoIsOpen(true);
     } catch (error) {
       console.error('Erro ao preparar o pedido', error);
     }
   };
   
-  
+  Modal.setAppElement('#root');
+
   return (
     <main className='menu-cozinha'>
       <div className="menu-cozinha-coluna">
@@ -88,6 +93,26 @@ const AguardandoProducao = () => {
           ))
         )}
       </div>
+      <Modal
+          className="modal-pedido-realizado"
+          isOpen={modalParaProducaoIsOpen}
+          style={{
+            overlay: {
+            backgroundColor: "rgba(0, 0, 0, 0.7)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+            },
+          }}
+        >
+          <div className="icone-modal">
+            <FaTimes className="icone-fechar-modal" onClick={() => setParaProducaoIsOpen(false)}/>
+          </div>
+          <div className="conteudo-principal-modal">
+            <img className='imagem-pedido-realizado' src="/imagens/pedido-em-producao.png" alt="Imagem de sem nome do cliente" />
+            <p className='p-pedido-realizado'>Pedido enviado para preparo!</p>
+          </div>
+        </Modal>
     </main>
   );
 };

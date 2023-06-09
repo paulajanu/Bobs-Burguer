@@ -20,23 +20,32 @@ describe('Formulario', () => {
   test('Realiza o login e navega para a página de destino', async () => {
     const navigate = jest.fn();
     useNavigate.mockReturnValue(navigate);
-  
+
     const { getByLabelText, getByText } = render(<Formulario />);
-  
+
     const emailInput = getByLabelText('E-mail:');
     const senhaInput = getByLabelText('Senha:');
     const entrarButton = getByText('ENTRAR');
-  
+
     fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
     fireEvent.change(senhaInput, { target: { value: 'password' } });
-  
-    login.mockResolvedValueOnce({ status: 200 });
-  
+
+    login.mockResolvedValueOnce({
+      status: 200,
+      json: () => Promise.resolve({
+        accessToken: 'access_token',
+        user: {
+          id: 'user_id',
+          role: 'garcom'
+        }
+      })
+    });
+
     fireEvent.click(entrarButton);
-  
+
     await waitFor(() => {
       expect(login).toHaveBeenCalledWith('test@example.com', 'password');
-      // expect(navigate).toHaveBeenCalledWith('/Menugarcom');
+      expect(navigate).toHaveBeenCalledWith('/MenuGarcom');
     });
   });
 
@@ -64,18 +73,21 @@ describe('Formulario', () => {
   it('deve chamar a função Erros ao ocorrer uma resposta com status 400', async () => {
     const errorMessage = 'Erro de requisição inválida';
     Erros.mockReturnValueOnce('Mensagem de erro customizada');
-    login.mockResolvedValueOnce({ status: 400, json: () => Promise.resolve(errorMessage) });
-  
+    login.mockResolvedValueOnce({
+      status: 400,
+      json: () => Promise.resolve(errorMessage)
+    });
+
     const { getByLabelText, getByText, getByTestId } = render(<Formulario />);
-  
+
     const emailInput = getByLabelText('E-mail:');
     const senhaInput = getByLabelText('Senha:');
     const entrarButton = getByText('ENTRAR');
-  
+
     fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
     fireEvent.change(senhaInput, { target: { value: 'validpassword' } });
     fireEvent.click(entrarButton);
-  
+
     await waitFor(() => {
       expect(login).toHaveBeenCalledTimes(1);
       expect(login).toHaveBeenCalledWith('test@example.com', 'validpassword');
@@ -85,6 +97,3 @@ describe('Formulario', () => {
     });
   });
 });
-  
-  
-  

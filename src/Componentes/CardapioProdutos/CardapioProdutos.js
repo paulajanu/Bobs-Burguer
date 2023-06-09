@@ -4,20 +4,18 @@ import { obterProdutos } from '../../API/api.js';
 import './CardapioProdutos.css';
 import CardPedido from '../CardPedido/CardPedido.js';
 import MesaCliente from '../MesaCliente/MesaCliente.js';
-import queryString from 'query-string';
-import { useLocation } from 'react-router-dom';
 import Modal from 'react-modal';
 import Botao from '../Botao/Botao.js';
 import {ProvedorCliente } from '../../Contextos/contextoCliente.js';
+import { useSearchParams } from 'react-router-dom';
 
 const CardapioProdutos = () => {
   const [produtos, setProdutos] = useState([]);
   const [categoriaSelecionada, setCategoriaSelecionada] = useState('');
   const [mostrarProdutos, setMostrarProdutos] = useState(false); // Estado para controlar a visibilidade dos produtos
   const [produtosSelecionados, setProdutosSelecionados] = useState([]);
-  const location = useLocation();
-  const mesaParams = queryString.parse(location.search);
-  const mesaSelecionada = mesaParams.mesa || '';
+  const [searchParams] = useSearchParams(); 
+  const mesaSelecionada = searchParams.get('mesa') || '';
   const [modalIsOpen, setIsOpen] = useState(false);
   const [selecionarHamburguer, setSelecionarHamburguer] = useState('');
   const [selecionarOpcional, setSelecionarOpcional] = useState('');

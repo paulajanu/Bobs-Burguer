@@ -1,14 +1,10 @@
 import { Link } from 'react-router-dom';
-import { atualizarStatusPedido, obterPedidos } from '../../API/api';
+import { obterPedidos } from '../../API/api';
 import { useEffect, useState } from 'react';
 import Menu from '../Menu/Menu';
-import Botao from '../Botao/Botao';
-import Modal from 'react-modal';
-import { FaTimes } from 'react-icons/fa';
 
 const PedidosEmPreparo = () => {
   const [pedidos, setPedidos] = useState([]);
-  const [modalPedidoProntoIsOpen, setPedidoProntoIsOpen] = useState(false);
 
   useEffect(() => {
     const fetchPedidos = async () => {
@@ -18,7 +14,7 @@ const PedidosEmPreparo = () => {
         if (response.ok) {
           const data = await response.json();
           // Filtra os pedidos com o status "Em Preparo"
-          const pedidosEmPreparo = data.filter((pedido) => pedido.status === 'Em preparo');
+          const pedidosEmPreparo = data.filter((pedido) => pedido.status === 'Pronto');
           setPedidos(pedidosEmPreparo);
         } else {
           console.error('Erro ao obter os pedidos da API');
@@ -30,21 +26,6 @@ const PedidosEmPreparo = () => {
 
     fetchPedidos();
   }, []);
-
-  const btnPedidoPronto = async (pedidoId) => {
-    console.log('pedidoID', pedidoId);
-    try {
-      // Chama a função atualizarStatusPedido para atualizar o status do pedido para 'Pronto'
-      await atualizarStatusPedido(pedidoId, 'Pronto');
-      // Remove o pedido da lista de pedidos
-      setPedidos((pedidosAnteriores) =>
-        pedidosAnteriores.filter((pedido) => pedido.id !== pedidoId)
-      );
-      setPedidoProntoIsOpen(true);
-    } catch (error) {
-      console.error('Erro ao preparar o pedido', error);
-    }
-  };
 
   return (
     <main className='menu-cozinha'>
@@ -80,33 +61,10 @@ const PedidosEmPreparo = () => {
                   </div>
                 ))}
               </div>
-              <div className='botoes-pedidos'>
-                <Botao className="confirmar-cancelar verde" onClick={() => btnPedidoPronto(pedido.id)}>PRONTO</Botao>
-              </div>
             </div>
           ))
         )}
       </div>
-      <Modal
-          className="modal-pedido-realizado"
-          isOpen={modalPedidoProntoIsOpen}
-          style={{
-            overlay: {
-            backgroundColor: "rgba(0, 0, 0, 0.7)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
-            },
-          }}
-        >
-          <div className="icone-modal">
-            <FaTimes className="icone-fechar-modal" onClick={() => setPedidoProntoIsOpen(false)}/>
-          </div>
-          <div className="conteudo-principal-modal">
-            <img className='imagem-pedido-realizado' src="/imagens/pedido-pronto.png" alt="Imagem de sem nome do cliente" />
-            <p className='p-pedido-realizado'>Pedido pronto!</p>
-          </div>
-        </Modal>
     </main>
   );
 };
