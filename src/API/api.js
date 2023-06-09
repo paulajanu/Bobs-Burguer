@@ -70,7 +70,7 @@ export const obterPedidos = () => {
 
 export const atualizarStatusPedido = async (pedidoId, novoStatus,) => {
   try {
-    // const dataProcessamento = formatarData(new Date());
+    const dataAtualizada = new Date().toLocaleTimeString();
     const response = await fetch(`${APIURL}/orders/${pedidoId}`, {
       method: 'PATCH',
       headers: {
@@ -79,7 +79,7 @@ export const atualizarStatusPedido = async (pedidoId, novoStatus,) => {
       },
       body: JSON.stringify({
         status: novoStatus,
-        // dateProcessed: dataProcessamento,
+        dateProcessed: dataAtualizada,
       }),
     });
 
@@ -94,4 +94,18 @@ export const atualizarStatusPedido = async (pedidoId, novoStatus,) => {
   }
 };
 
-  
+export const excluirPedido = async (pedidoId) => {
+
+  try {
+    // const dataProcessamento = formatarData(new Date());
+    return await fetch(`${APIURL}/orders/${pedidoId}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${getItens()}`
+      }
+    });
+  } catch (error) {
+    // Tratar o erro aqui
+  }
+};
