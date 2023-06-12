@@ -47,11 +47,15 @@ function Mesas () {
     return (
         <main className='menu-garcom'>
             <div className="menu-garcom-coluna">
-                <Menu imagem="/imagens/em-preparo.png" texto="FAZER PEDIDO"/>
+                <Link to="/menuGarcom" className="menu-link">
+                    <Menu imagem="/imagens/em-preparo.png" texto="FAZER PEDIDO"/>
+                </Link>
                 <Link to="/prontos-atendente" className="menu-link">
                     <Menu imagem="/imagens/prontos.png" texto="PRONTOS"/>
                 </Link>
-                <Menu imagem="/imagens/entregues.png" texto="ENTREGUES"/>
+                <Link to="/pedidos-entregues" className="menu-link">
+                    <Menu imagem="/imagens/entregues.png" texto="ENTREGUES"/>
+                </Link>
             </div>
             <div className="menu-garcom-mesas">
                 <p className="mesas-instrucao">Escolha a mesa para fazer o pedido</p>

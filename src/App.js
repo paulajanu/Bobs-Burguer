@@ -6,6 +6,7 @@ import AguardandoProduzirCozinha from './Paginas/Cozinha/AguardandoProduzir.js';
 import PedidosEmPreparoCozinha from './Paginas/Cozinha/EmPreparoCozinha.js';
 import PedidosProntosCozinha from './Paginas/Cozinha/PedidosProntosCozinha.js';
 import PedidosProntosAtendentes from './Paginas/MenuGarcom/PedidosProntosAtendentes.js';
+import PedidosEntreguesAtendente from './Paginas/MenuGarcom/PedidosEntreguesAtendente.js';
 
 function Rotas() {
   return (
@@ -18,6 +19,7 @@ function Rotas() {
         <Route path='/em-preparo' element={<PedidosEmPreparoCozinha/>} />
         <Route path='/prontos' element={<PedidosProntosCozinha/>} />
         <Route path='/prontos-atendente' element={<PedidosProntosAtendentes/>} />
+        <Route path='/pedidos-entregues' element={<PedidosEntreguesAtendente/>} />
       </Routes>
     </BrowserRouter>
   );
