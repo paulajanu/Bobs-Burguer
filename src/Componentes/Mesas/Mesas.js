@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Cards from '../Cards/Cards.js';
 import Menu from '../Menu/Menu.js';
 import './Mesas.css';
@@ -46,8 +47,10 @@ function Mesas () {
     return (
         <main className='menu-garcom'>
             <div className="menu-garcom-coluna">
-                <Menu imagem="/imagens/em-preparo.png" texto="EM PREPARO"/>
-                <Menu imagem="/imagens/prontos.png" texto="PRONTOS"/>
+                <Menu imagem="/imagens/em-preparo.png" texto="FAZER PEDIDO"/>
+                <Link to="/prontos-atendente" className="menu-link">
+                    <Menu imagem="/imagens/prontos.png" texto="PRONTOS"/>
+                </Link>
                 <Menu imagem="/imagens/entregues.png" texto="ENTREGUES"/>
             </div>
             <div className="menu-garcom-mesas">
