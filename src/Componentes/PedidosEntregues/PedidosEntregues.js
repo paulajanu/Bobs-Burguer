@@ -1,17 +1,11 @@
 import { Link } from 'react-router-dom';
-import { atualizarStatusPedido, obterPedidos } from '../../API/api';
+import { obterPedidos } from '../../API/api';
 import { useEffect, useState } from 'react';
 import Menu from '../Menu/Menu';
-import Botao from '../Botao/Botao';
-import Modal from 'react-modal';
-import { FaTimes } from 'react-icons/fa';
 
-const PedidosProntosAtendentes = () => {
+const PedidosEmPreparo = () => {
   const [pedidos, setPedidos] = useState([]);
-  const [modalEntregarPedidoIsOpen, setEntregarPedidoIsOpen] = useState(false);
 
-  Modal.setAppElement('#root');
-  
   useEffect(() => {
     const fetchPedidos = async () => {
       try {
@@ -19,8 +13,8 @@ const PedidosProntosAtendentes = () => {
 
         if (response.ok) {
           const data = await response.json();
-          // Filtra os pedidos com o status "Em Preparo"
-          const pedidosEmPreparo = data.filter((pedido) => pedido.status === 'Pronto');
+          // Filtra os pedidos com o status "Entregue"
+          const pedidosEmPreparo = data.filter((pedido) => pedido.status === 'Entregue');
           setPedidos(pedidosEmPreparo);
         } else {
           console.error('Erro ao obter os pedidos da API');
@@ -33,25 +27,10 @@ const PedidosProntosAtendentes = () => {
     fetchPedidos();
   }, []);
 
-  const btnEntregarPedido = async (pedidoId) => {
-    console.log('pedidoID', pedidoId);
-    try {
-      // Chama a função atualizarStatusPedido para atualizar o status do pedido para 'Entregar'
-      await atualizarStatusPedido(pedidoId, 'Entregue');
-      // Remove o pedido da lista de pedidos
-      setPedidos((pedidosAnteriores) =>
-        pedidosAnteriores.filter((pedido) => pedido.id !== pedidoId)
-      );
-      setEntregarPedidoIsOpen(true);
-    } catch (error) {
-      console.error('Erro ao entregar o pedido', error);
-    }
-  };
-
   return (
     <main className='menu-cozinha'>
       <div className="menu-cozinha-coluna">
-      <Link to="/menuGarcom" className="menu-link">
+        <Link to="/menuGarcom" className="menu-link">
             <Menu imagem="/imagens/em-preparo.png" texto="FAZER PEDIDO"/>
         </Link>
         <Link to="/prontos-atendente" className="menu-link">
@@ -83,35 +62,12 @@ const PedidosProntosAtendentes = () => {
                   </div>
                 ))}
               </div>
-              <div className='botoes-pedidos'>
-                <Botao className="confirmar-cancelar verde" onClick={() => btnEntregarPedido(pedido.id)}>ENTREGAR</Botao>
-              </div>
             </div>
           ))
         )}
       </div>
-      <Modal
-          className="modal-pedido-realizado"
-          isOpen={modalEntregarPedidoIsOpen}
-          style={{
-            overlay: {
-            backgroundColor: "rgba(0, 0, 0, 0.7)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
-            },
-          }}
-        >
-          <div className="icone-modal">
-            <FaTimes className="icone-fechar-modal" onClick={() => setEntregarPedidoIsOpen(false)}/>
-          </div>
-          <div className="conteudo-principal-modal">
-            <img className='imagem-pedido-realizado' src="/imagens/pedido-entregue.png" alt="Imagem de sem nome do cliente" />
-            <p className='p-pedido-realizado'>Pedido entregue!</p>
-          </div>
-        </Modal>
     </main>
   );
 };
 
-export default PedidosProntosAtendentes;
+export default PedidosEmPreparo;
