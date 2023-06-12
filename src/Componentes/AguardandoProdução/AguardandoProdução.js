@@ -12,6 +12,7 @@ import { excluirPedido } from '../../API/api';
 const AguardandoProducao = () => {
   const [pedidos, setPedidos] = useState([]);
   const [modalParaProducaoIsOpen, setParaProducaoIsOpen] = useState(false);
+  const [modalParaCancelarIsOpen, setParaCancelarIsOpen] = useState(false);
 
   useEffect(() => {
     const fetchPedidos = async () => {
@@ -59,6 +60,7 @@ const AguardandoProducao = () => {
       setPedidos((pedidosAnteriores) =>
         pedidosAnteriores.filter((pedido) => pedido.id !== pedidoId)
       );
+      setParaCancelarIsOpen(true);
     } catch (error) {
       console.error('Erro ao cancelar o pedido', error);
     }
@@ -126,6 +128,26 @@ const AguardandoProducao = () => {
           <div className="conteudo-principal-modal">
             <img className='imagem-pedido-realizado' src="/imagens/pedido-em-producao.png" alt="Imagem de sem nome do cliente" />
             <p className='p-pedido-realizado'>Pedido enviado para preparo!</p>
+          </div>
+        </Modal>
+        <Modal
+          className="modal-pedido-realizado"
+          isOpen={modalParaCancelarIsOpen}
+          style={{
+            overlay: {
+            backgroundColor: "rgba(0, 0, 0, 0.7)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+            },
+          }}
+        >
+          <div className="icone-modal">
+            <FaTimes className="icone-fechar-modal" onClick={() => setParaCancelarIsOpen(false)}/>
+          </div>
+          <div className="conteudo-principal-modal">
+            <img className='imagem-pedido-realizado' src="/imagens/pedido-cancelado.png" alt="Imagem de sem nome do cliente" />
+            <p className='p-pedido-realizado'>Pedido excluido com sucesso!</p>
           </div>
         </Modal>
     </main>

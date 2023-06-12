@@ -4,7 +4,8 @@ import MenuGarcom from './Paginas/MenuGarcom/MenuGarcom.js';
 import Pedidos from './Paginas/Pedidos/Pedidos.js';
 import AguardandoProduzirCozinha from './Paginas/Cozinha/AguardandoProduzir.js';
 import PedidosEmPreparoCozinha from './Paginas/Cozinha/EmPreparoCozinha.js';
-import PedidosProntos from './Paginas/Cozinha/PedidosProntos.js';
+import PedidosProntosCozinha from './Paginas/Cozinha/PedidosProntosCozinha.js';
+import PedidosProntosAtendentes from './Paginas/MenuGarcom/PedidosProntosAtendentes.js';
 
 function Rotas() {
   return (
@@ -15,7 +16,8 @@ function Rotas() {
         <Route path='/Pedidos' element={<Pedidos/>} />
         <Route path='/Cozinha' element={<AguardandoProduzirCozinha/>} />
         <Route path='/em-preparo' element={<PedidosEmPreparoCozinha/>} />
-        <Route path='/prontos' element={<PedidosProntos/>} />
+        <Route path='/prontos' element={<PedidosProntosCozinha/>} />
+        <Route path='/prontos-atendente' element={<PedidosProntosAtendentes/>} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,11 +1,11 @@
-import PedidosProntos from "../../Componentes/PedidosProntos/PedidosProntos.js";
+import PedidosProntosAtendentes from "../../Componentes/PedidosProntos/PedidosProntosAtendente.js";
 import Navegador from "../../Componentes/Navegador/Navegador.js";
 
 function PedidosEmPreparoCozinha() {
   return (
     <div>
       <Navegador/>
-      <PedidosProntos/>
+      <PedidosProntosAtendentes/>
     </div>
   );
 };
