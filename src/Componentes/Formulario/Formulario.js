@@ -29,6 +29,8 @@ const Formulario = () => {
             navigate('/MenuGarcom');
           } else if (resp.user.role === 'cozinha') {
             navigate('/Cozinha');
+          } else if (resp.user.role === 'admin') {
+            navigate('/MenuAdministrador');
           }
         } else if (response.status === 400) {
           return response.json()

@@ -7,8 +7,12 @@
     cursor: pointer;
 }
 
-.imagem-menu {
+.imagem-pequena {
     width: 200px;
+}
+
+.imagem-grande {
+    width: 300px;
 }
 
 hr {
@@ -20,10 +24,23 @@ hr {
 .texto-menu {
     color: #fbfc4e;
     font-family: 'Fredoka', sans-serif;
-    font-size: 30px;
     margin: 0;
     font-weight: bold;
     letter-spacing: 0.05em;
+}
+
+.texto-menu-menor {
+    font-size: 30px;
+}
+
+.texto-menu-maior {
+    font-size: 40px;
+}
+
+.menu-adm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @media screen and (min-width: 1280px) {
