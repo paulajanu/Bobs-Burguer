@@ -31,13 +31,13 @@ const PedidosEmPreparo = () => {
     <main className='menu-cozinha'>
       <div className="menu-cozinha-coluna">
         <Link to="/Cozinha" className="menu-link">
-          <Menu imagem="/imagens/em-preparo.png" texto="PENDENTES" />
+          <Menu imagem="/imagens/em-preparo.png"  tamanhoImagem="imagem-pequena" estiloFonte="texto-menu-menor" texto="PENDENTES" />
         </Link>
         <Link to="/em-preparo" className="menu-link">
-          <Menu imagem="/imagens/em-preparo2.png" texto="EM PREPARO" />
+          <Menu imagem="/imagens/em-preparo2.png"  tamanhoImagem="imagem-pequena" estiloFonte="texto-menu-menor" texto="EM PREPARO" />
         </Link>
         <Link to="/prontos" className="menu-link">
-          <Menu imagem="/imagens/prontos.png" texto="PRONTOS" />
+          <Menu imagem="/imagens/prontos.png"  tamanhoImagem="imagem-pequena" estiloFonte="texto-menu-menor" texto="PRONTOS" />
         </Link>
       </div>
       <div className='pedidos'>

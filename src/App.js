@@ -7,6 +7,9 @@ import PedidosEmPreparoCozinha from './Paginas/Cozinha/EmPreparoCozinha.js';
 import PedidosProntosCozinha from './Paginas/Cozinha/PedidosProntosCozinha.js';
 import PedidosProntosAtendentes from './Paginas/MenuGarcom/PedidosProntosAtendentes.js';
 import PedidosEntreguesAtendente from './Paginas/MenuGarcom/PedidosEntreguesAtendente.js';
+import MenuAdministrador from './Paginas/Administrador/MenuAdministrador.js';
+import MenuAdministrarFuncionarios from './Paginas/Administrador/MenuAdministrarFuncionarios.js';
+import MenuAdministrarProdutos from './Paginas/Administrador/MenuAdministrarProdutos.js';
 
 function Rotas() {
   return (
@@ -20,6 +23,9 @@ function Rotas() {
         <Route path='/prontos' element={<PedidosProntosCozinha/>} />
         <Route path='/prontos-atendente' element={<PedidosProntosAtendentes/>} />
         <Route path='/pedidos-entregues' element={<PedidosEntreguesAtendente/>} />
+        <Route path='/MenuAdministrador' element={<MenuAdministrador/>} />
+        <Route path='/AdministrarFuncionarios' element={<MenuAdministrarFuncionarios/>} />
+        <Route path='/AdministrarProdutos' element={<MenuAdministrarProdutos/>} />
       </Routes>
     </BrowserRouter>
   );
