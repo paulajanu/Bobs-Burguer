@@ -3,7 +3,7 @@ import { obterPedidos } from '../../API/api';
 import { useEffect, useState } from 'react';
 import Menu from '../Menu/Menu';
 
-const PedidosEmPreparo = () => {
+const PedidosEntregues = () => {
   const [pedidos, setPedidos] = useState([]);
 
   useEffect(() => {
@@ -70,4 +70,4 @@ const PedidosEmPreparo = () => {
   );
 };
 
-export default PedidosEmPreparo;
+export default PedidosEntregues;
