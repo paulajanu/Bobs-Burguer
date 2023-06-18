@@ -1,7 +1,7 @@
 import PedidosProntosCozinha from "../../Componentes/PedidosProntos/PedidosProntosCozinha.js";
 import Navegador from "../../Componentes/Navegador/Navegador.js";
 
-function PedidosEmPreparoCozinha() {
+function PaginaPedidosProntosCozinha() {
   return (
     <div>
       <Navegador/>
@@ -10,4 +10,4 @@ function PedidosEmPreparoCozinha() {
   );
 };
   
-export default PedidosEmPreparoCozinha;
+export default PaginaPedidosProntosCozinha;
