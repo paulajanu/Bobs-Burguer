@@ -3,7 +3,11 @@ import AguardandoProducao from '../Componentes/AguardandoProdução/AguardandoPr
 import { obterPedidos, atualizarStatusPedido, excluirPedido } from '../API/api.js';
 import { BrowserRouter } from 'react-router-dom';
 
-jest.mock('../API/api.js');
+jest.mock('../API/api', () => ({
+  obterPedidos: jest.fn(),
+  atualizarStatusPedido: jest.fn(),
+  excluirPedido: jest.fn(),
+}));
 
 describe('AguardandoProducao', () => {
     let rootElement;
@@ -177,35 +181,21 @@ it('abre o modal de pedido para produção ao clicar no botão PREPARAR', async 
     expect(modalPedidoCanceladoElement).toBeInTheDocument();
   });
 
-//   it('exibe mensagem de "Sem pedidos no momento" quando não há pedidos', async () => {
-//     const pedidosMock = [];
+  it('exibe mensagem de "Sem pedidos no momento" quando não há pedidos', async () => {
+    const pedidosMock = [];
 
-//     obterPedidos.mockResolvedValueOnce({ ok: true, json: () => Promise.resolve(pedidosMock) });
+    obterPedidos.mockResolvedValueOnce({ ok: true, json: () => Promise.resolve(pedidosMock) });
 
-//     render(
-//         <BrowserRouter>
-//             <AguardandoProducao />
-//         </BrowserRouter>
-//       );
+    render(
+      <BrowserRouter>
+        <AguardandoProducao />
+      </BrowserRouter>
+    );
 
-//     const semPedidosMensagem = await screen.findByText('Sem pedidos no momento!');
-//     expect(semPedidosMensagem).toBeInTheDocument();
+    const semPedidosMensagem = await screen.findByText('Sem pedidos no momento!');
+    expect(semPedidosMensagem).toBeInTheDocument();
 
-//     const imgSemPedidos = screen.getByAltText('Imagem de sem pedidos');
-//     expect(imgSemPedidos).toBeInTheDocument();
-//   });
-
-// it('exibe mensagem de erro ao falhar ao obter os pedidos', async () => {
-//     obterPedidos.mockResolvedValueOnce({ ok: false });
-  
-//     render(
-//         <BrowserRouter>
-//             <AguardandoProducao />
-//         </BrowserRouter>
-//       );
-  
-//       const erroMensagens = screen.queryAllByText(/Erro ao obter os pedidos da API/);
-
-//       expect(erroMensagens.length).toBeGreaterThan(0);
-//   });
+    const imgSemPedidos = screen.getByAltText('Imagem de sem pedidos');
+    expect(imgSemPedidos).toBeInTheDocument();
+  });
   });

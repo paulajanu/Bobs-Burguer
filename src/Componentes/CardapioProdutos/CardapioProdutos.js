@@ -96,7 +96,7 @@ const CardapioProdutos = () => {
           <button className="filtro-cardapio" onClick={() => filtrarPorCategoria('Acompanhamentos')}>Acompanhamentos</button>
           <button className="filtro-cardapio" onClick={() => filtrarPorCategoria('Bebidas')}>Bebidas</button>
         </div>
-        <div className="cardapio-produtos">
+        <div className="cardapio-produtos" data-testid="card-produto">
           {mostrarProdutos &&  // Renderizar os produtos apenas se a variável mostrarProdutos for verdadeira
             produtosFiltrados.map((produto) => (
               <Cards
