@@ -3,7 +3,7 @@
 .menu {
     background: transparent;
     border: none;
-    margin: 23px 0 0 50px;
+    margin: 20px 0 0 50px;
     cursor: pointer;
 }
 
@@ -12,7 +12,7 @@
 }
 
 .imagem-grande {
-    width: 300px;
+    width: 270px;
 }
 
 hr {
@@ -34,7 +34,7 @@ hr {
 }
 
 .texto-menu-maior {
-    font-size: 40px;
+    font-size: 35px;
 }
 
 .menu-adm {

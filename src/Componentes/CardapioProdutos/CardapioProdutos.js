@@ -105,7 +105,7 @@ const CardapioProdutos = () => {
                 imagem={produto.image}
                 cardsClassName="cards-produto"
                 texto1={produto.name}
-                texto2={`R$ ${produto.price.toFixed(2)}`}
+                texto2={`R$ ${produto.price}`}
                 textoClassName="texto-card-produtos"
                 adicionarProduto={adicionarProduto} 
               />

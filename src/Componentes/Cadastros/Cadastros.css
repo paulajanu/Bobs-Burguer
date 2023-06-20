@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+
+.campo-texto-cadastros label {
+  display: block;
+  margin: 12px 0 8px 0;
+  font-size: 23px;
+  color: #112953;
+  font-weight: bold;
+} 
+
+.campo-texto-cadastros input {
+  background-color: rgba(255, 255, 255, 0.55);
+  font-family: 'Quicksand', sans-serif;
+  color: #112953;
+  width: 100%;
+  border: none;
+  font-size: 24px;
+  padding: 13px 46px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.input-container-cadastros {
+  position: relative;
+}
+
+.icon-cadastros {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #112953;
+    font-size: 25px;
+}
+  
+.campo-texto-cadastros {
+    position: relative;
+}
+    
+.input-container-cadastros {
+    position: relative;
+}
+
+.campo-texto-cadastros select {
+    background-color: rgba(255, 255, 255, 0.55);
+    font-family: 'Quicksand', sans-serif;
+    color: #112953;
+    width: 100%;
+    border: none;
+    font-size: 23px;
+    padding: 13px 46px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+  
+.campo-texto-cadastros select::-ms-expand {
+    display: none;
+}
+  
+.campo-texto-cadastros select option {
+    font-family: 'Quicksand', sans-serif;
+    color: #112953;
+    font-size: 20px;
+}
+  

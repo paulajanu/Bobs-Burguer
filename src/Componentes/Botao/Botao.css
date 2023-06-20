@@ -46,6 +46,12 @@
     color: #fff;
 }
 
+.confirmar-cadastrar {
+    font-size: 20px;
+    padding: 20px 20px;
+    margin-top: 25px;
+}
+
 @media (max-width: 712px) {
 .entrar {
     padding: 12px 33px;
