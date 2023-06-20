@@ -1,0 +1,30 @@
+.email {
+    margin-right: 245px;
+    font-size: 24px;
+    color: #112953;
+}
+
+.cargo {
+    margin-right: 60px;
+    font-size: 24px;
+    color: #112953; 
+}
+
+.id-colaboradores {
+    margin-right: 60px;
+    margin-left: 10px;
+    font-size: 24px;
+    color: #112953;
+}
+
+.instrucao-gerenciar-colaboradores {
+    display: inline-block;
+    background-color: #112953;
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 26px;
+    margin-bottom: 30px;
+    margin-top: 65px;
+}

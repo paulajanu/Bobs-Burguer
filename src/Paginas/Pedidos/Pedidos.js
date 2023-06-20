@@ -17,7 +17,7 @@ function Pedidos() {
       <Navegador />
       <div className="pedidos-content">
         <div>
-          <Voltar />
+          <Voltar caminhoVoltar="/Menugarcom"/>
           {/* Passar a função adicionarProduto como propriedade */}
           <CardapioProdutos adicionarProduto={adicionarProduto} />
         </div>

@@ -9,6 +9,7 @@
   width: 660px;
   border-radius: 20px;
   margin-top: 20px;
+  overflow-y: auto;
 }
 
 .cardapio-filtro {
