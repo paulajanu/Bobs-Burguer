@@ -129,6 +129,7 @@ const GerenciarProdutos = () => {
                 <p className="preco-produto p-informacoes">R${produto.price},00</p>
                 <span className="icones">
                   <FaPencilAlt
+                    data-testid="btn-editar-produto"
                     className="icone-lixeira espacamento"
                     onClick={() => btnEditarProduto(produto)}
                   />
