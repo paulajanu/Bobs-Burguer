@@ -97,7 +97,6 @@ export const atualizarStatusPedido = async (pedidoId, novoStatus,) => {
 export const excluirPedido = async (pedidoId) => {
 
   try {
-    // const dataProcessamento = formatarData(new Date());
     return await fetch(`${APIURL}/orders/${pedidoId}`, {
       method: 'DELETE',
       headers: {
