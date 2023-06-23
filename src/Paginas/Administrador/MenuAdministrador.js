@@ -7,10 +7,10 @@ function MenuAdministrador() {
     <div>
       <Navegador/>
       <div className="menu-adm">
-        <Link to="/AdministrarFuncionarios">
+        <Link to="/AdministrarFuncionarios" className="menu-link">
           <Menu imagem="/imagens/administrar-funcionarios.png"  tamanhoImagem="imagem-grande" estiloFonte="texto-menu-maior" texto="ADMINISTRAR COLABORADORES"/>
         </Link>
-        <Link to="/AdministrarProdutos">
+        <Link to="/AdministrarProdutos" className="menu-link">
           <Menu imagem="/imagens/administrar-produtos.png"  tamanhoImagem="imagem-grande" estiloFonte="texto-menu-maior" texto="ADMINISTRAR PRODUTOS"/>
         </Link>
        </div>

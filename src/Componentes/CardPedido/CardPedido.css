@@ -161,37 +161,128 @@
     margin: 10px 0 0 0 ;
 }
 
-@media (max-width: 712px) {
+@media (max-width: 768px) {
     .card-pedido {
         width: 362px;
         margin-left: 5px;
         margin-bottom: 10px;
     }
+
     .resumo-compra {
         font-size: 17px;
     }
+
     .icone-carrinho {
         font-size: 29px;
     }
+
     .item {
         font-size: 17px;
-        margin-right: 140px;
+        margin-right: 128px;
     }
+
     .quantidade {
         font-size: 17px;
     }
+
     .preco {
         font-size: 17px;
     }
+
     .produto-selecionado{
         grid-template-columns: none;
         font-size: 17px;
     }
+
     .preco-selecionado{ 
         font-size: 17px;
     }
+
     .total {
         font-size: 20px;
+    }
+
+    .modal-pedido-realizado {
+        width: 330px;
+        height: 466px;
+    }
+
+    .p-pedido-realizado {
+        font-size: 30px;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .card-pedido {
+        width: 672px;
+    }
+
+    .resumo-compra {
+        font-size: 19px;
+    }
+
+    .item {
+        font-size: 19px;
+        margin-right: 257px;
+    }
+
+    .quantidade {
+        font-size: 19px;
+        margin-right: 154px;
+    }
+
+    .preco {
+        font-size: 19px;
+    }
+
+    .produto-selecionado{
+        /* grid-template-columns: none; */
+        grid-template-columns: 268px 25px 25px 131px 132px auto;
+        font-size: 19px;
+    }
+
+    .preco-selecionado{ 
+        font-size: 19px;
+    }
+
+    .modal-pedido-realizado {
+        width: 400px;
+        /* height: 466px; */
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+    .card-pedido {
+        width: 672px;
+    }
+
+    .resumo-compra {
+        font-size: 19px;
+    }
+
+    .item {
+        font-size: 19px;
+        margin-right: 257px;
+    }
+
+    .quantidade {
+        font-size: 19px;
+        margin-right: 154px;
+    }
+
+    .preco {
+        font-size: 19px;
+    }
+
+    .produto-selecionado{
+        /* grid-template-columns: none; */
+        grid-template-columns: 268px 25px 25px 131px 132px auto;
+        font-size: 19px;
+    }
+
+    .preco-selecionado{ 
+        font-size: 19px;
     }
 }
 

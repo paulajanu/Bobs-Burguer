@@ -44,7 +44,7 @@
     color: #112953;
 }
 
-.preco {
+.preco-admin {
     margin-right: 106px;
     font-size: 24px;
     color: #112953;
@@ -94,11 +94,11 @@
     font-family: 'Quicksand', sans-serif;
     padding: 3px; 
     border: 2px solid transparent;
-    outline: none; /* Remova a borda de foco padrão */
+    outline: none; 
 }
 
 .input-editar:focus {
-  border-color: #112953;/* Defina a cor desejada para a borda em foco */
+  border-color: #112953;
 }
 
 .p-produto-excluido {

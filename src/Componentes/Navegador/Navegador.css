@@ -10,3 +10,21 @@
     cursor: pointer;
     margin: 5px 10px 5px 0;
 }
+
+@media (max-width: 768px) {
+    .icon-sair {
+        font-size: 35px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .icon-sair {
+        font-size: 45px;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+    .icon-sair {
+        font-size: 55px;
+    }
+}

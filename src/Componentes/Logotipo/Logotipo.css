@@ -9,7 +9,7 @@
 }
 
  /* regras de estilo para telas menores ou iguais a 375px */
-@media (max-width: 712px) {
+@media (max-width: 768px) {
     .logo img {
         width: 272px;
         height: 300px;
@@ -18,7 +18,21 @@
 
 @media screen and (min-height: 600px) and (max-height: 900px) {
     .logo img {
-        width: 280px;
-        height: 308px;
+        width: 250px;
+        height: 270px;
+    }
+}
+
+@media screen and (min-height: 720px) and (max-height: 900px) {
+    .logo img {
+        margin-top: 25px;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (min-height: 901px) {
+    .logo img {
+        margin-top: 55px;
+        margin-bottom: 30px;
     }
 }
