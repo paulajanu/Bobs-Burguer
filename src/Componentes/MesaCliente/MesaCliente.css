@@ -31,16 +31,40 @@
     margin-right: 20px;
 }
 
-@media (max-width: 712px) {
+@media (max-width: 768px) {
     .mesa-cliente {
         font-size: 17px;
         margin-left: 5px;
         width: 362px;
     }
+
     .mesa {
         font-size: 17px;
     }
+
     .input-transparente {
         width: 130px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .mesa-cliente {
+        font-size: 19px;
+        width: 672px;
+    }
+
+    .mesa {
+        font-size: 19px;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+    .mesa-cliente {
+        font-size: 19px;
+        width: 672px;
+    }
+
+    .mesa {
+        font-size: 19px;
     }
 }

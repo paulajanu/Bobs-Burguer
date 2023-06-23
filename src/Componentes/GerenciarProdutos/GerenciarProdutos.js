@@ -96,7 +96,7 @@ const GerenciarProdutos = () => {
           <p className="id-nome-preco-acoes">
             <span className="id">ID</span>
             <span className="nome">Produto</span>
-            <span className="preco">Valor</span>
+            <span className="preco-admin">Valor</span>
             <span className="acoes">Ações</span>
           </p>
           <hr className="listra-carrinho" />

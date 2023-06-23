@@ -141,10 +141,11 @@ input[type="radio"] {
   margin-top: 20px;
 }
 
-@media (max-width: 712px) {
+@media (max-width: 768px) {
   .container {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
   .cardapio-filtro {
@@ -161,7 +162,6 @@ input[type="radio"] {
 
   .cardapio-produtos {
     width: 362px;
-    margin-left: 5px;
   }
 
   .cards-produto {
@@ -204,7 +204,69 @@ input[type="radio"] {
   }
   .imagem-modal-maior {
     width: 52px;
+  }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cardapio-filtro {
+    height: 99px;
+    width: 657px;
+  }
+
+  .filtro-cardapio {
+    font-size: 19px;
+  }
+
+  .cardapio-produtos {
+    width: 672px;
+  }
+
+  .cards-produto {
+    height: 200px;
+    width: 183px;
+  }
+
+  .texto-card-produtos {
+    font-size: 19px;
+    margin: 0 0 0 0;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cardapio-filtro {
+    height: 99px;
+    width: 657px;
+  }
+
+  .filtro-cardapio {
+    font-size: 19px;
+  }
+
+  .cardapio-produtos {
+    width: 672px;
+  }
+
+  .cards-produto {
+    height: 200px;
+    width: 183px;
+  }
+
+  .texto-card-produtos {
+    font-size: 19px;
+    margin: 0 0 0 0;
+  }
 }
 
 @media screen and (min-height: 600px) {
