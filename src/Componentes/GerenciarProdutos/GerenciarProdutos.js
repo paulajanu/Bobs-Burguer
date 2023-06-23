@@ -87,18 +87,18 @@ const GerenciarProdutos = () => {
   };
 
   return (
-    <div>
+    <div className="principal">
       <div className="container-instrucao-gerenciar-produtos">
         <p className="instrucao-gerenciar-produtos">Lista de Produtos</p>
       </div>
       <div className="card-gerenciar-produtos">
         <div className="inicio-card-produtos">
-          <p className="id-nome-preco-acoes">
             <span className="id">ID</span>
-            <span className="nome">Produto</span>
+            <span className="nome nome-mobile">Produto</span>
             <span className="preco-admin">Valor</span>
             <span className="acoes">Ações</span>
-          </p>
+        </div>
+        <div>
           <hr className="listra-carrinho" />
         </div>
         {produtos.map((produto) => (

@@ -6,9 +6,8 @@
 
 .card-gerenciar-produtos {
     background-color: rgba(255, 255, 255, 0.32);
-    width: 50%;
+    max-width: 65%;
     height: 100%;
-    margin-left: 25%;
     border-radius: 20px;
     padding: 8px;
     margin-bottom: 10px;
@@ -23,7 +22,7 @@
     border-radius: 10px;
     font-size: 26px;
     margin-bottom: 30px;
-    margin-top: 65px;
+    margin-top: 45px;
 }
 
 .container-instrucao-gerenciar-produtos {
@@ -53,11 +52,6 @@
 .acoes {
     font-size: 24px;
     color: #112953;
-}
-
-.id-nome-preco-acoes{
-    margin-top: 2px;
-    display: contents;
 }
 
 .informacoes-produtos {
@@ -106,4 +100,54 @@
     color: #fff;
     margin: 10px 0 0 0 ;
     text-align: center;
+}
+
+.principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .card-gerenciar-produtos {
+        max-width: 97%;
+        padding: 8px 3px 8px 3px;
+    }
+    .id {
+        margin-right: 0px;
+        margin-left: 3px;
+        font-size: 18px;
+    }
+    .preco-admin {
+        margin-right: 0px;
+        font-size: 18px;
+        color: #112953;
+    }
+
+    .nome-mobile {
+        font-size: 18px;
+        margin-right: 0px;
+    }
+    
+    .acoes {
+        font-size: 18px;
+        color: #112953;
+        margin-right: 3px;
+    }
+    .inicio-card-produtos {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .instrucao-gerenciar-produtos{
+        margin-top: 0;
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    .informacoes-produtos {
+        font-size: 16px;
+    }
+    
 }
