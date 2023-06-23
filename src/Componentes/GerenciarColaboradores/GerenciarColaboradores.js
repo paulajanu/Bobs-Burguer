@@ -90,22 +90,22 @@ const GerenciarColaboradores = () => {
   };
 
   return (
-    <div>
+    <div className="principal">
       <div className="container-instrucao-gerenciar-produtos">
         <p className="instrucao-gerenciar-colaboradores">Lista de Colaboradores</p>
       </div>
       <div className="card-gerenciar-produtos">
         <div className="inicio-card-produtos">
-          <p className="id-nome-preco-acoes">
             <span className="id-colaboradores">ID</span>
             <span className="email">E-mail</span>
             <span className="cargo">Cargo</span>
             <span className="acoes">Ações</span>
-          </p>
+        </div>
+        <div> 
           <hr className="listra-carrinho" />
         </div>
         {colaboradores.map((colaborador) => (
-  <div key={colaborador.id} className="informacoes-produtos">
+  <div key={colaborador.id} className="informacoes-produtos informacoes-colaboradores">
     {editando && editando.id === colaborador.id ? (
       <>
         <p className="id-produto p-informacoes">{colaborador.id}</p> {/* Adicionado aqui */}

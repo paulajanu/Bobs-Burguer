@@ -1,34 +1,59 @@
-.email {
-    margin-right: 245px;
-    font-size: 24px;
-    color: #112953;
-}
+    .email {
+        margin-right: 245px;
+        font-size: 24px;
+        color: #112953;
+    }
 
-.cargo {
-    margin-right: 60px;
-    font-size: 24px;
-    color: #112953; 
-}
+    .cargo {
+        margin-right: 60px;
+        font-size: 24px;
+        color: #112953; 
+    }
 
-.id-colaboradores {
-    margin-right: 60px;
-    margin-left: 10px;
-    font-size: 24px;
-    color: #112953;
-}
+    .id-colaboradores {
+        margin-right: 60px;
+        margin-left: 10px;
+        font-size: 24px;
+        color: #112953;
+    }
 
-.instrucao-gerenciar-colaboradores {
-    display: inline-block;
-    background-color: #112953;
-    color: #fff;
-    font-family: 'Quicksand', sans-serif;
-    padding: 20px;
-    border-radius: 10px;
-    font-size: 26px;
-    margin-bottom: 30px;
-    margin-top: 65px;
-}
+    .instrucao-gerenciar-colaboradores {
+        display: inline-block;
+        background-color: #112953;
+        color: #fff;
+        font-family: 'Quicksand', sans-serif;
+        padding: 20px;
+        border-radius: 10px;
+        font-size: 26px;
+        margin-bottom: 30px;
+        margin-top: 65px;
+    }
 
 @media (max-width: 768px) {
-    
+    .id-colaboradores {
+        margin-right: 0px;
+        margin-left: 3px;
+        font-size: 18px;
+    }
+
+    .email {
+        font-size: 18px;
+        margin-right: 0px;
+    }
+
+    .cargo {
+        margin-right: 0px;
+        font-size: 18px; 
+    }
+
+    .instrucao-gerenciar-colaboradores{
+        margin-top: 0;
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    .informacoes-colaboradores{
+        font-size: 15px;
+    }
+
 }
