@@ -40,7 +40,7 @@
 
 ## 1. Resumo do Projeto 🍔🎯
 
-O projeto consiste em desenvolver uma interface de pedidos para um restaurante de hambúrgueres utilizando um tablet. O objetivo é agilizar e ordenar o processo de pedidos para que o restaurante possa atender seus clientes de forma mais eficiente. O tema escolhido para o projeto é Bob Esponja. Para isso, será utilizado o framework REACT, uma tecnologia de desenvolvimento de interfaces de usuário, e serão realizados consumos de APIs para integrar o sistema com outras ferramentas e serviços.
+O projeto foi conduzido com o intuito de desenvolver uma interface de pedidos para um pequeno restaurante de hambúrgueres, utilizando um tablet, visando aprimorar a agilidade e a organização do processo de pedidos, permitindo que o restaurante possa atender seus clientes de forma mais eficiente. O projeto teve como tema principal Bob Esponja, e para sua implementação utilizou-se o framework REACT, uma tecnologia de desenvolvimento de interfaces de usuário. Além disso, foram realizados consumos de APIs para integrar o sistema com outras ferramentas e serviços, proporcionando uma experiência completa e interativa aos usuários.
 
 ## 2. Histórias de Usuário 📚
 <div align="center">
@@ -48,6 +48,7 @@ O projeto consiste em desenvolver uma interface de pedidos para um restaurante d
 </div>
 
 ## 3. Fluxogramas📏📑
+
 Para melhorar a compreensão e o planejamento da aplicação, foi desenvolvido um fluxograma detalhado que descreve as funcionalidades disponíveis para cada cargo de usuário. Cada história de usuário foi cuidadosamente mapeada no fluxograma, permitindo uma compreensão clara das ações e responsabilidades associadas a cada acesso na aplicação. Esse processo de mapeamento foi essencial para garantir que cada cargo tenha as permissões adequadas e possa desempenhar suas tarefas de maneira eficiente. O fluxograma serve como uma referência visual valiosa durante o desenvolvimento e a manutenção contínua da aplicação, ajudando a garantir que todas as necessidades e requisitos de cada cargo sejam atendidos de forma adequada e intuitiva.
 
 <img src="./public/imagens/readme/Fluxograma1.png">
@@ -66,7 +67,7 @@ Após efetuar o login com sucesso, você será direcionado à sua área de traba
 <div align="center">
 <h4> Quer testar? </h4>
 
-se quiser testar nossa aplicação, segue às credenciais: 
+Se quiser testar nossa aplicação, segue às credenciais: 
 
 |      |          Garçom/Garçonete         |      Chefe de Cozinha           |     Administrador    |
 |------|-------------------------|-------------------------|-------------------------|
@@ -77,13 +78,12 @@ se quiser testar nossa aplicação, segue às credenciais:
 
 ### 4.2 Perfil: Garçom/Garçonete 💁‍♀️
 
-Após efetuar o login, os garçons/garçonetes terão acesso à página inicial do sistema, onde encontrarão um menu lateral intuitivo. Nesse menu, serão oferecidas diferentes opções para facilitar o gerenciamento de pedidos.
+Após efetuar o login, os garçons/garçonetes terão acesso à página inicial do sistema, que apresenta um menu lateral intuitivo com diferentes opções para facilitar o gerenciamento de pedidos,  além de oferecer uma visão geral das mesas disponíveis, identificadas pelos seus respectivos números.
 
-Na seção "Prontos", será possível visualizar todos os pedidos que estão prontos para serem entregues aos clientes. Já na seção "Entregues", poderão verificar os pedidos que já foram entregues com sucesso. Para retornar à tela de mesas e efetuar um novo pedido, bastará selecionar a opção "Fazer pedido" no menu.
+Para registrar um novo pedido, o garçom/garçonete deverá escolher a mesa correspondente e para gerenciar os pedidos que já foram realizados e enviados para a cozinha, na seção "Prontos", será possível visualizar todos os pedidos que estão prontos para serem entregues aos clientes. Enquanto na seção "Entregues", poderão verificar os pedidos que já foram entregues com sucesso. Caso seja necessário fazer um novo pedido, basta selecionar a opção "Fazer pedido" no menu para retornar à tela de mesas.
 
-A primeira tela exibirá uma visão geral das mesas disponíveis, identificadas por seus respectivos números. Para registrar um novo pedido, o garçom/garçonete deverá escolher a mesa correspondente.
+Com a implementação desse sistema eficiente, o gerenciamento de pedidos é simplificado, permitindo que os garçons/garçonetes atendam os clientes de forma ágil e organizada, garantindo uma experiência mais eficiente para todos.
 
-Com esse sistema eficiente, o gerenciamento de pedidos será simplificado, permitindo aos garçons/garçonetes atender aos clientes de forma ágil e organizada.
 
 <h5> Tela inicial vista pelo garçom/garçonete </h5>
 <img src="./public/imagens/readme/tela-vista-pelo-garcom.png">
@@ -95,11 +95,11 @@ Com esse sistema eficiente, o gerenciamento de pedidos será simplificado, permi
 <img src="./public/imagens/readme/garcom-entregues.png">
 <br>
 
-Após selecionar a mesa desejada, o garçom/garçonete será redirecionado para a tela de realização do pedido do cliente. Nessa tela, terá acesso ao cardápio completo, com a opção de aplicar filtros como "Café da Manhã", "Hambúrgueres", "Acompanhamentos" e "Bebidas" para facilitar a busca.
+Após selecionar a mesa desejada, o garçom/garçonete será redirecionado(a) para a tela de realização do pedido do cliente. Nessa tela, terá acesso ao cardápio completo, com a opção de aplicar filtros, como "Café da Manhã", "Hambúrgueres", "Acompanhamentos" e "Bebidas", para facilitar a busca dos itens desejados.
 
-Ao selecionar um produto, este será exibido ao lado, no resumo do pedido. O garçom/garçonete também terá a possibilidade de ajustar a quantidade do item, aumentando ou diminuindo, além de poder excluí-lo, caso necessário.
+Ao selecionar um produto, este será automaticamente exibido no resumo do pedido. O garçom/garçonete também terá a possibilidade de ajustar a quantidade do item, aumentando ou diminuindo, além de poder excluí-lo, caso necessário.
 
-Para concluir o pedido com sucesso, será necessário digitar o nome do cliente e clicar no botão "Confirmar".
+Para concluir o pedido com sucesso, será necessário inserir o nome do cliente e clicar no botão "Confirmar", garantindo assim que todas as informações estejam corretas antes de finalizar o pedido.
 
 <h5> Tela de pedidos </h5>
 <img src="./public/imagens/readme/novo-pedido.png">
@@ -108,17 +108,18 @@ Para concluir o pedido com sucesso, será necessário digitar o nome do cliente 
 <img src="./public/imagens/readme/pedido-confirmado.png">
 
 ### 4.3 Perfil: Chefe de Cozinha 👩‍🍳
-Ao efetuar o login, o chefe de cozinha terá acesso à página principal da plataforma de gestão de pedidos. Através do menu lateral, terá à disposição diversas funcionalidades que visam facilitar o trabalho na cozinha.
 
-Na seção "Pendentes", poderá visualizar os pedidos realizados pelos garçons/garçonetes. Nessa etapa, poderá selecionar a opção "Preparar" para iniciar o processo de preparo do pedido ou optar por "Cancelar" para excluir o pedido caso necessário.
+Após efetuar o login, o chefe de cozinha terá acesso à página principal da plataforma de gestão de pedidos, que oferece um menu lateral repleto de funcionalidades para facilitar o trabalho na cozinha.
 
-Na seção "Em Preparo", o chefe de cozinha poderá acompanhar os pedidos que estão em processo de preparo na cozinha. Terá a opção de marcar um pedido como "Pronto" quando estiver finalizado, alterando assim o status do pedido.
+Na seção "Pendentes", o chefe de cozinha poderá visualizar de forma clara e organizada todos os pedidos realizados pelos garçons/garçonetes. Nessa etapa, terá a opção de selecionar a função "Preparar" para iniciar o processo de preparo do pedido. Caso necessário, também poderá optar por "Cancelar" para excluir o pedido.
 
-Na seção "Prontos", serão exibidos todos os pedidos que já estão prontos para serem entregues aos clientes. Nesse momento, os garçons/garçonetes terão acesso a esses pedidos para realizar a entrega nas mesas correspondentes.
+Na seção "Em Preparo", o chefe de cozinha terá um acompanhamento detalhado dos pedidos que estão em processo de preparo. Terá a opção de marcar um pedido como "Pronto" assim que estiver finalizado, alterando o status do pedido.
 
-Com essas funcionalidades, o chefe de cozinha terá maior controle sobre os pedidos, agilizando o processo de preparo e garantindo uma coordenação eficiente entre a cozinha e o atendimento. Isso resultará em uma experiência aprimorada para os clientes, com pratos preparados de forma ágil e entregues com qualidade.
+Na seção "Prontos", serão exibidos todos os pedidos que estão prontos para serem entregues aos clientes. Nesse momento, os garçons/garçonetes terão acesso imediato a esses pedidos, possibilitando a entrega aos clientes correspondentes.
 
-<h5> Tela inicial vista pelo chefe de cozinha </h5>
+Com todas essas funcionalidades integradas, o chefe de cozinha terá maior controle sobre os pedidos, agilizando o processo de preparo e garantindo uma coordenação eficiente entre a cozinha e o atendimento. Essa abordagem resultará em uma experiência aprimorada para os clientes, com pratos preparados de forma ágil e entregues com qualidade.
+
+<h5> Tela inicial vista pelo chefe de cozinha - Pedidos pendentes </h5>
 <img src="./public/imagens/readme/cozinha-aguardando-producao.png">
 <br>
 <h5> Tela vista pelo chefe de cozinha ao clicar em "Em Preparo" </h5>
@@ -132,18 +133,18 @@ Com essas funcionalidades, o chefe de cozinha terá maior controle sobre os pedi
 
 ### 4.4 Perfil: Administrador 👩‍💻
 
-Após efetuar o login, o administrador terá acesso à página inicial do sistema, onde encontrará um menu duas opções.
+Após efetuar o login, o administrador terá acesso à página inicial do sistema, que apresenta um menu com duas opções principais.
 
-Ao clicar em "Administrar Colaboradores", o chefe de cozinha terá acesso a outro menu, onde poderá selecionar "Adicionar Colaborador" para incluir um novo membro na equipe ou "Gerenciar Colaborador" para editar ou excluir informações de colaboradores existentes.
+Ao selecionar "Administrar Colaboradores" no menu, o administrador terá acesso a um submenu onde poderá escolher entre "Adicionar Colaborador" para incluir um novo membro na equipe ou "Gerenciar Colaborador" para editar ou excluir informações de colaboradores existentes.
 
-Da mesma forma, ao selecionar "Administrar Produtos" no menu, o chefe de cozinha terá opções adicionais. Poderá escolher "Adicionar Produto" para incluir um novo item ao catálogo ou "Gerenciar Produto" para editar ou excluir informações de produtos existentes.
+Da mesma forma, ao optar por "Administrar Produtos" no menu, o administrador poderá selecionar "Adicionar Produto" para incluir um novo item ao catálogo ou "Gerenciar Produto" para editar ou excluir informações de produtos existentes.
 
-Essas funcionalidades permitem ao administrador gerenciar de forma eficiente a equipe de colaboradores, adicionando novos membros quando necessário e realizando alterações ou exclusões conforme a demanda. Além disso, o administrador poderá manter o controle dos produtos, adicionando novos itens ao cardápio ou realizando ajustes conforme a necessidade do estabelecimento. Isso contribui para uma gestão eficaz da equipe e dos recursos disponíveis na cozinha.
+Essas funcionalidades oferecem ao administrador uma gestão eficiente da equipe de colaboradores, permitindo adicionar novos membros quando necessário e realizar ajustes ou exclusões conforme a demanda. Além disso, o administrador pode manter o controle dos produtos, adicionando novos itens ao cardápio ou realizando ajustes conforme necessário para atender às necessidades do estabelecimento. Essa abordagem contribui para uma gestão eficaz da equipe e dos recursos disponíveis na cozinha, garantindo um funcionamento otimizado do sistema.
 
-<h5> Menu visto pelo administrador </h5>
+<h5> Menu visto pelo administrador ao efetuar login</h5>
 <img src="./public/imagens/readme/admin-menu.png">
 <br>
-<h5> Menu visto ao clicar em "Administrar Funcionários" </h5>
+<h5> Menu visto ao clicar em "Administrar Colaboradores" </h5>
 <img src="./public/imagens/readme/admin-funcionarios.png">
 <br>
 <h5> Tela vista ao clicar em "Adicionar Colaborador" </h5>
