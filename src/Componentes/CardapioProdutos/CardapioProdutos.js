@@ -12,7 +12,7 @@ import { useSearchParams } from 'react-router-dom';
 const CardapioProdutos = () => {
   const [produtos, setProdutos] = useState([]);
   const [categoriaSelecionada, setCategoriaSelecionada] = useState('');
-  const [mostrarProdutos, setMostrarProdutos] = useState(false); // Estado para controlar a visibilidade dos produtos
+  const [mostrarProdutos, setMostrarProdutos] = useState(false); 
   const [produtosSelecionados, setProdutosSelecionados] = useState([]);
   const [searchParams] = useSearchParams(); 
   const mesaSelecionada = searchParams.get('mesa') || '';
@@ -60,7 +60,7 @@ const CardapioProdutos = () => {
   
   const filtrarPorCategoria = (categoria) => {
     setCategoriaSelecionada(categoria);
-    setMostrarProdutos(true); // Mostrar os produtos quando uma categoria for selecionada
+    setMostrarProdutos(true); 
   };
 
   const produtosFiltrados = categoriaSelecionada
@@ -68,16 +68,12 @@ const CardapioProdutos = () => {
     : produtos;
 
     const adicionarProduto = (produto) => {
-      console.log('Produto adicionado:', produto); // Imprime no console o produto que está sendo adicionado
       const produtoExistente = produtosSelecionados.find((p) => p.id === produto.id);
-      // Verifica se o produto já existe na lista de produtos selecionados com base no seu ID
       if (!produtoExistente) {
-        // Se o produto não existe na lista
         if (!modalIsOpen && produto.id === 5) {
-          setIsOpen(true); // Abre o modal, se o produto é do tipo hambúrguer simples (id === 5) e o modal não estiver aberto
+          setIsOpen(true); 
         } else {
           setProdutosSelecionados([...produtosSelecionados, produto]);
-          // Adiciona o produto à lista de produtos selecionados, espalhando os produtos existentes e adicionando o novo produto
         };
       };
     };
@@ -97,7 +93,7 @@ const CardapioProdutos = () => {
           <button className="filtro-cardapio" onClick={() => filtrarPorCategoria('Bebidas')}>Bebidas</button>
         </div>
         <div className="cardapio-produtos" data-testid="card-produto">
-          {mostrarProdutos &&  // Renderizar os produtos apenas se a variável mostrarProdutos for verdadeira
+          {mostrarProdutos &&  
             produtosFiltrados.map((produto) => (
               <Cards
                 key={produto.id}
@@ -152,8 +148,8 @@ const CardapioProdutos = () => {
                   type="radio"
                   id="Frango"
                   value="Frango"
-                  checked={selecionarHamburguer === 'Frango'} // Verifica se o valor selecionado é 'Frango'
-                  onChange={btnHamburguer} // Chama a função btnHamburguer quando o valor do input é alterado
+                  checked={selecionarHamburguer === 'Frango'} 
+                  onChange={btnHamburguer} 
                 />
                 <label htmlFor="frango">Frango</label>
               </div>
@@ -219,21 +215,16 @@ const CardapioProdutos = () => {
             <Botao
               className="azul confirmar-cancelar"
               onClick={() => {
-              setIsOpen(false); // Fechar o modal
+              setIsOpen(false); 
                 const produtoHamburguerSimples = produtos.find((produto) => produto.id === 5);
-                  // Encontrar o produto do tipo hambúrguer simples na lista de produtos
                 const produtoSelecionado = {
                   ...produtoHamburguerSimples,
                   tipoHamburguer: selecionarHamburguer,
                   adicional: selecionarOpcional,
                 };
-                  // Criar um objeto com os dados do produto selecionado, incluindo o tipo de hambúrguer e o adicional selecionados
                 adicionarProduto(produtoSelecionado);
-                  // Chamar a função adicionarProduto passando o produto selecionado como parâmetro para adicioná-lo à lista de produtos selecionados
                 setTipoHamburguer(selecionarHamburguer);
-                  // Atualizar o estado do tipo de hambúrguer com o valor selecionado
                 setAdicional(selecionarOpcional);
-                  // Atualizar o estado do adicional com o valor selecionado
               }}
             >
               CONFIRMAR

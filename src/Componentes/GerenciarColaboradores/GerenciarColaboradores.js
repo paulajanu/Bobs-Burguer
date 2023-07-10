@@ -19,11 +19,9 @@ const GerenciarColaboradores = () => {
     const fetchColaboradores = async () => {
       try {
         const response = await obterUsuarios();
-        console.log('response', response);
 
         if (response.ok) {
           const data = await response.json();
-          console.log('data', data);
           setColaboradores(data);
         } else {
           console.error("Erro ao obter os colaboradores da API");
@@ -108,7 +106,7 @@ const GerenciarColaboradores = () => {
   <div key={colaborador.id} className="informacoes-produtos informacoes-colaboradores">
     {editando && editando.id === colaborador.id ? (
       <>
-        <p className="id-produto p-informacoes">{colaborador.id}</p> {/* Adicionado aqui */}
+        <p className="id-produto p-informacoes">{colaborador.id}</p> {}
         <input
           type="text"
           name="email"
