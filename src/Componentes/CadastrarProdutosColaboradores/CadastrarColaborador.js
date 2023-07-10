@@ -26,13 +26,12 @@ function CadastrarColaborador() {
       senha === '' ||
       cargo === '' 
     ) {
-      setCamposPreenchidos(false); // Campos não preenchidos
+      setCamposPreenchidos(false); 
       return;
     }
 
     adicionarColaborador(nome, email, senha, cargo)
-      .then((collaborator) => {
-        console.log(collaborator);
+      .then(() => {
         setColaboradorCadastradoIsOpen(true);
       })
       .catch((error) => {

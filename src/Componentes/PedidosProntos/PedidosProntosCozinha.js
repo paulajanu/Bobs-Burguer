@@ -13,7 +13,6 @@ const PedidosProntosCozinha = () => {
 
         if (response.ok) {
           const data = await response.json();
-          // Filtra os pedidos com o status "Em Preparo"
           const pedidosEmPreparo = data.filter((pedido) => pedido.status === 'Pronto');
           setPedidos(pedidosEmPreparo);
         } else {

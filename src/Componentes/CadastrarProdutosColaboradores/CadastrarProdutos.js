@@ -29,7 +29,7 @@ function CadastrarProdutos() {
       categoriaProduto === '' ||
       dataCadastro === ''
     ) {
-      setCamposPreenchidos(false); // Campos não preenchidos
+      setCamposPreenchidos(false); 
       return;
     }
 
@@ -41,8 +41,7 @@ function CadastrarProdutos() {
       categoriaProduto,
       dataCadastro
     )
-      .then((products) => {
-        console.log(products); // Ação após o cadastro do produto
+      .then(() => {
         setProdutoCadastradoIsOpen(true);
       })
       .catch((error) => {

@@ -20,8 +20,6 @@ const Formulario = () => {
       .then(async(response) => {
         if (response.status === 200) {
           const resp = await response.json();
-          console.log(resp);
-          console.log(resp.user.id);
           setItens(resp.accessToken);
           setIdUsuario(resp.user.id);
   
