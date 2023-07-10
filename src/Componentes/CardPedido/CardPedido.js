@@ -18,8 +18,8 @@ const CardPedido = ({ produtosSelecionados, removerProduto, tipoHamburguer, adic
 
   const incrementarQuantidade = (produto) => {
     setQuantidadesSelecionadas((prevQuantidades) => ({
-      ...prevQuantidades, // Copia as quantidades selecionadas existentes
-      [produto.id]: (prevQuantidades[produto.id] || 0) + 1 || 1 // Incrementa a quantidade do produto selecionado
+      ...prevQuantidades, 
+      [produto.id]: (prevQuantidades[produto.id] || 0) + 1 || 1 
     }));
   };
 
@@ -30,28 +30,24 @@ const CardPedido = ({ produtosSelecionados, removerProduto, tipoHamburguer, adic
     
   const decrementarQuantidade = (produto) => {
     setQuantidadesSelecionadas((prevQuantidades) => {
-      const quantidadeAtual = prevQuantidades[produto.id] || 1; // Obtém a quantidade atual do produto ou define como 1 se não estiver definida
+      const quantidadeAtual = prevQuantidades[produto.id] || 1; 
         if (quantidadeAtual === 1) {
-          // Se a quantidade atual for 1, remove o produto da lista de quantidades selecionadas
           const novasQuantidades = { ...prevQuantidades };
           delete novasQuantidades[produto.id];
-          return novasQuantidades; // Retorna a lista de quantidades atualizada sem o produto
+          return novasQuantidades; 
         }
         return {
           ...prevQuantidades,
-          [produto.id]: quantidadeAtual - 1 || 1 // Decrementa a quantidade do produto em 1, ou mantém como 1 se for menor que 1
+          [produto.id]: quantidadeAtual - 1 || 1 
         };
     });
   };
 
   const btnConfirmar = () => {
-    // Verificando se o nome do cliente foi preenchido
     if (cliente.trim() === '') {
       setModalNomeVazioIsOpen(true);
       return;
     }
-  
-    // Verificando se há pelo menos um pedido selecionado
     if (produtosSelecionados.length === 0) {
       setModalResumoVazioIsOpen(true);
       return;
@@ -74,7 +70,7 @@ const CardPedido = ({ produtosSelecionados, removerProduto, tipoHamburguer, adic
   
     enviarPedido(idUsuario, cliente, arrayProdutos, dataEntrada)
       .then(() => {
-        setIsOpen(true); // Abre o modal somente se todas as verificações passarem
+        setIsOpen(true); 
       })
       .catch((error) => {
         console.error('Erro ao realizar pedido', error);
@@ -96,7 +92,7 @@ const CardPedido = ({ produtosSelecionados, removerProduto, tipoHamburguer, adic
           <span className="preco">Preço</span>
         </p>
         <hr className="listra-carrinho" />
-        {/* Exibir os produtos selecionados */}
+        {}
         {produtosSelecionados.map((produto, index) => (
           <div className="produto-selecionado" key={index}>
             <div className="produto-info">
@@ -121,7 +117,7 @@ const CardPedido = ({ produtosSelecionados, removerProduto, tipoHamburguer, adic
       </div>
       <hr className="listra-total" />
       <div className="container-total">
-        {/* Calcular e exibir o total */}
+        {}
         <p className="total">
           Total: 
         </p>

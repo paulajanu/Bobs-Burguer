@@ -3,15 +3,9 @@
 body {
   margin: 0;
   font-family: 'Quicksand', sans-serif;
-  /* -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
   background: url('../public/imagens/bg-bob.jpg') no-repeat center center fixed;
   background-size: cover;
 }
-
-/* html, body {
-  height: 100%;
-} */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

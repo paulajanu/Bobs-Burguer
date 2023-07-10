@@ -13,7 +13,6 @@ const PedidosEntregues = () => {
 
         if (response.ok) {
           const data = await response.json();
-          // Filtra os pedidos com o status "Entregue"
           const pedidosEmPreparo = data.filter((pedido) => pedido.status === 'Entregue');
           setPedidos(pedidosEmPreparo);
         } else {

@@ -8,8 +8,7 @@ const MesaCliente = ({ mesa }) => {
     const {cliente, addCliente} = useContext(ContextoCliente);
 
     const nomeCliente = (event) => {
-        const inputValue = event.target.value;
-        console.log(inputValue); 
+        const inputValue = event.target.value; 
         addCliente(inputValue);
     };
 

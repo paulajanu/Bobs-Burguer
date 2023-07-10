@@ -21,7 +21,6 @@ const AguardandoProducao = () => {
   
         if (response.ok) {
           const data = await response.json();
-          // Filtra os pedidos com o status "PENDENTE"
           const pedidosPendentes = data.filter((pedido) => pedido.status === 'Pendente');
           setPedidos(pedidosPendentes);
         } else {
@@ -37,11 +36,8 @@ const AguardandoProducao = () => {
   
 
   const btnPrepararPedido = async (pedidoId) => {
-    console.log('pedidoID', pedidoId);
     try {
-      // Chama a função atualizarStatusPedido para atualizar o status do pedido para 'Em preparo'
       await atualizarStatusPedido(pedidoId, 'Em preparo');
-      // Remove o pedido da lista de pedidos
       setPedidos((pedidosAnteriores) =>
         pedidosAnteriores.filter((pedido) => pedido.id !== pedidoId)
       );
@@ -52,11 +48,8 @@ const AguardandoProducao = () => {
   };
 
   const btnCancelarPedido = async (pedidoId) => {
-    console.log('pedidoID', pedidoId);
     try {
-      // Chama a função excluirPedido para excluir o pedido da API
       await excluirPedido(pedidoId);
-      // Remove o pedido da lista de pedidos
       setPedidos((pedidosAnteriores) =>
         pedidosAnteriores.filter((pedido) => pedido.id !== pedidoId)
       );

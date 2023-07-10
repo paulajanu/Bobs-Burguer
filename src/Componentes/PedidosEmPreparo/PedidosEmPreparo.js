@@ -17,7 +17,6 @@ const PedidosEmPreparo = () => {
 
         if (response.ok) {
           const data = await response.json();
-          // Filtra os pedidos com o status "Em Preparo"
           const pedidosEmPreparo = data.filter((pedido) => pedido.status === 'Em preparo');
           setPedidos(pedidosEmPreparo);
         } else {
@@ -32,11 +31,8 @@ const PedidosEmPreparo = () => {
   }, []);
 
   const btnPedidoPronto = async (pedidoId) => {
-    console.log('pedidoID', pedidoId);
     try {
-      // Chama a função atualizarStatusPedido para atualizar o status do pedido para 'Pronto'
       await atualizarStatusPedido(pedidoId, 'Pronto');
-      // Remove o pedido da lista de pedidos
       setPedidos((pedidosAnteriores) =>
         pedidosAnteriores.filter((pedido) => pedido.id !== pedidoId)
       );
