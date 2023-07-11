@@ -1,4 +1,4 @@
-import { adicionarColaborador } from "../API/api";
+import { adicionarColaborador } from "../API/Users.js";
 
 describe('adicionarColaborador', () => {
     test('deve fazer uma requisição POST para adicionar um colaborador', async () => {

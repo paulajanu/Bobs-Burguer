@@ -1,8 +1,8 @@
-import { obterUsuarios } from "../../API/api"
+import { obterUsuarios } from "../../API/Users.js"
 import { useEffect, useState } from "react";
 import { FaTrash, FaPencilAlt } from 'react-icons/fa';
 import './GerenciarColaboradores.css';
-import { editarColaboradores, deletarColaboradores } from "../../API/api";
+import { editarColaboradores, deletarColaboradores } from "../../API/Users.js";
 import Botao from "../Botao/Botao";
 import Modal from 'react-modal';
 

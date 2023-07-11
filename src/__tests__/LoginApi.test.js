@@ -1,4 +1,4 @@
-import login from "../API/api";
+import login from "../API/Login.js";
 
 
 describe('Teste da função login', () => {

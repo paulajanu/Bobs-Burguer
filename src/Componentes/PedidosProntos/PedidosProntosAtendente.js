@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { atualizarStatusPedido, obterPedidos } from '../../API/api';
+import { atualizarStatusPedido, obterPedidos } from '../../API/Orders.js';
 import { useEffect, useState } from 'react';
 import Menu from '../Menu/Menu';
 import Botao from '../Botao/Botao';

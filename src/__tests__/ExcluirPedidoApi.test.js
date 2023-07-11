@@ -1,4 +1,4 @@
-import { excluirPedido } from "../API/api";
+import { excluirPedido } from "../API/Orders.js";
 import * as localStorageUtil from '../util/localStorage';
 
 describe('excluirPedido', () => {

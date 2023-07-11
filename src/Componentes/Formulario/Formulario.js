@@ -4,7 +4,7 @@ import './Formulario.css';
 import { FaEnvelope, FaLock } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
-import login from '../../API/api';
+import login from '../../API/Login.js';
 import { Erros } from '../../Erros/erros';
 import { setIdUsuario, setItens } from "../../util/localStorage.js";
 

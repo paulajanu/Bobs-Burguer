@@ -1,6 +1,6 @@
 import React, { useEffect, useState} from 'react';
 import Cards from '../Cards/Cards.js';
-import { obterProdutos } from '../../API/api.js';
+import { obterProdutos } from '../../API/Products.js';
 import './CardapioProdutos.css';
 import CardPedido from '../CardPedido/CardPedido.js';
 import MesaCliente from '../MesaCliente/MesaCliente.js';
