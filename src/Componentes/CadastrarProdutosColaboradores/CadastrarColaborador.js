@@ -3,7 +3,7 @@ import Cadastros from '../Cadastros/Cadastros.js';
 import { FaEnvelope, FaLock, FaUserAlt, FaUtensils, FaTimes } from "react-icons/fa";
 import Botao from '../Botao/Botao.js';
 import React, { useState } from 'react';
-import { adicionarColaborador } from '../../API/api';
+import { adicionarColaborador } from '../../API/Users.js';
 import Modal from 'react-modal';
 
 function CadastrarColaborador() {

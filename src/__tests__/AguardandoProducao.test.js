@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import AguardandoProducao from '../Componentes/AguardandoProdução/AguardandoProdução';
-import { obterPedidos, atualizarStatusPedido, excluirPedido } from '../API/api.js';
+import { obterPedidos, atualizarStatusPedido, excluirPedido } from '../API/Orders.js';
 import { BrowserRouter } from 'react-router-dom';
 
 jest.mock('../API/api', () => ({

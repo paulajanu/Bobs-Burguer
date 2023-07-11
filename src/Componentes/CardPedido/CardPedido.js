@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 import Botao from '../Botao/Botao';
 import './CardPedido.css';
 import { FaShoppingCart, FaMinus, FaPlus, FaTrash, FaTimes } from 'react-icons/fa';
-import { enviarPedido } from '../../API/api';
+import { enviarPedido } from '../../API/Orders.js';
 import { ContextoCliente } from '../../Contextos/contextoCliente';
 import { getIdUsuario } from '../../util/localStorage';
 import Modal from 'react-modal';

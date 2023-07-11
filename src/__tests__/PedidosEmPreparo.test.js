@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { MemoryRouter } from 'react-router-dom';
-import { atualizarStatusPedido, obterPedidos } from '../API/api';
+import { atualizarStatusPedido, obterPedidos } from '../API/Orders.js';
 import PedidosEmPreparo from '../Componentes/PedidosEmPreparo/PedidosEmPreparo.js';
 
 jest.mock('../API/api', () => ({

@@ -1,4 +1,4 @@
-import { atualizarStatusPedido } from "../API/api";
+import { atualizarStatusPedido } from "../API/Orders.js";
 import * as localStorageUtil from '../util/localStorage';
 
 describe('atualizarStatusPedido', () => {
