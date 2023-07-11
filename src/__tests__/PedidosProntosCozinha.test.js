@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen} from '@testing-library/react';
 import PedidosProntosCozinha from '../Componentes/PedidosProntos/PedidosProntosCozinha';
 import { BrowserRouter } from 'react-router-dom';
-import { obterPedidos } from '../API/api';
+import { obterPedidos } from '../API/Orders.js';
 
 
 jest.mock('../API/api', () => ({

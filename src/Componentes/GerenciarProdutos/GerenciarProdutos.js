@@ -1,8 +1,8 @@
-import { obterProdutos } from "../../API/api"
+import { obterProdutos } from "../../API/Products.js"
 import { useEffect, useState } from "react";
 import './GerenciarProdutos.css';
 import { FaTrash, FaPencilAlt } from 'react-icons/fa';
-import { editarProdutos, deletarProdutos } from "../../API/api";
+import { editarProdutos, deletarProdutos } from "../../API/Products.js";
 import Botao from "../Botao/Botao";
 import Modal from 'react-modal';
 

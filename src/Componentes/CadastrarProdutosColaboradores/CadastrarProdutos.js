@@ -3,7 +3,7 @@ import Cadastros from '../Cadastros/Cadastros.js';
 import { FaTag, FaClipboard, FaDollarSign, FaImage, FaCalendarDay, FaHamburger, FaTimes } from "react-icons/fa";
 import Botao from '../Botao/Botao.js';
 import React, { useState } from 'react';
-import { adicionarProdutos } from '../../API/api';
+import { adicionarProdutos } from '../../API/Products.js';
 import Modal from 'react-modal';
 
 function CadastrarProdutos() {

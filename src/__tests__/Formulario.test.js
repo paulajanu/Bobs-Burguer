@@ -3,7 +3,7 @@ import Formulario from '../Componentes/Formulario/Formulario.js';
 import { waitFor } from '@testing-library/react';
 import { useNavigate } from 'react-router-dom';
 import { render, fireEvent } from '@testing-library/react';
-import login from '../API/api.js';
+import login from '../API/Login.js';
 import { Erros } from '../Erros/erros.js';
 
 jest.mock('../API/api.js');

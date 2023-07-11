@@ -1,13 +1,12 @@
 import './AguardandoProdução.css';
 import Menu from '../Menu/Menu';
-import { obterPedidos } from '../../API/api';
+import { obterPedidos } from '../../API/Orders.js';
 import { useEffect, useState } from 'react';
 import Botao from '../Botao/Botao';
-import { atualizarStatusPedido } from '../../API/api';
+import { atualizarStatusPedido, excluirPedido} from '../../API/Orders.js';
 import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
 import { FaTimes } from 'react-icons/fa';
-import { excluirPedido } from '../../API/api';
 
 const AguardandoProducao = () => {
   const [pedidos, setPedidos] = useState([]);

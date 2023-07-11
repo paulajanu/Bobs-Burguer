@@ -1,4 +1,4 @@
-import { obterProdutos } from "../API/api";
+import { obterProdutos } from "../API/Products.js";
 import * as localStorageUtil from '../util/localStorage';
 
 describe('obterProdutos', () => {
