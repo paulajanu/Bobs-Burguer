@@ -139,7 +139,7 @@ Ao selecionar "Administrar Colaboradores" no menu, o administrador terá acesso 
 
 Da mesma forma, ao optar por "Administrar Produtos" no menu, o administrador poderá selecionar "Adicionar Produto" para incluir um novo item ao catálogo ou "Gerenciar Produto" para editar ou excluir informações de produtos existentes.
 
-Essas funcionalidades oferecem ao administrador uma gestão eficiente da equipe de colaboradores, permitindo adicionar novos membros quando necessário e realizar ajustes ou exclusões conforme a demanda. Além disso, o administrador pode manter o controle dos produtos, adicionando novos itens ao cardápio ou realizando ajustes conforme necessário para atender às necessidades do estabelecimento. Essa abordagem contribui para uma gestão eficaz da equipe e dos recursos disponíveis na cozinha, garantindo um funcionamento otimizado do sistema.
+Essas funcionalidades oferecem ao administrador uma gestão eficiente da equipe de colaboradores, permitindo adicionar novos membros quando necessário e realizar ajustes ou exclusões conforme a demanda. Além disso, o administrador pode manter o controle dos produtos, adicionando novos itens ao cardápio ou realizando ajustes conforme necessário para atender às necessidades do estabelecimento. Essa abordagem contribui para uma gestão eficaz da equipe e dos recursos disponíveis na cozinha, garantindo um funcionamento otimizado do sistema!
 
 <h5> Menu visto pelo administrador ao efetuar login</h5>
 <img src="./public/imagens/readme/admin-menu.png">
